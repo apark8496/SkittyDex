@@ -1,3 +1,4 @@
+// pokemon types with effectivness added
 module.exports = {
     types: [
        {
