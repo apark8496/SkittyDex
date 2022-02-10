@@ -17,7 +17,7 @@ async function newPostHandler(event) {
     });
 
     if (response.ok) {
-      document.location.replace('/dashboard');
+      document.location.replace('/pokeCenter');
     } else {
       alert(response.statusText);
       console.log(response);

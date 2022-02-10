@@ -14,9 +14,11 @@
   {{!-- navbar --}}
   <header class="navbar">
     <div class="container-fluid">
-      <h4 class="navbar-brand" id="logo">
+      <h4 class="navbar-brand">
         <a href="/">SkittyDex
-          {{!-- <i class="fas fa-laptop-code" id="logo"></i> --}}
+          <img id="logo"
+            src="https://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/79aea1b10e17782.png"
+            alt="skitty-logo">
         </a>
       </h4>
       <nav class="nav justify-content-end">
@@ -40,8 +42,12 @@
     {{{body}}}
   </main>
   {{!-- footer --}}
-  <footer class="text-center">
-    © 2022 SkittyDex 
+  <footer id="footer" class="text-center">
+    <a href="/">Home</a>
+    <a href="/dashboard">Dashboard</a>
+    <a href="/Battlecenter">Battlecenter</a>
+    <br>
+    <p> © 2022 SkittyDex</p>
   </footer>
 
   {{#if logged_in}}
