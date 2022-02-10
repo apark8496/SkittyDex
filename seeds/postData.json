@@ -1,7 +1,7 @@
 [
     {
-      "title": "Simplify the way you seed Tables!",
-      "post": "In your package.json file, under scripts add in 'seed': 'node seeds/{filename}' You can also use 'npm run seeds'!",
+      "title": "Looking for an Umbreon",
+      "post": "To complete my evvee collection I need an Umbreon. Does anyone have one they are willing to trade?",
       "userID": 1
       
     },

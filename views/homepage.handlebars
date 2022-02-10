@@ -1,16 +1,26 @@
-<aside class="container text-center mb-2">
-      <div class="col fs-5">
+{{!-- about section --}}
+<jumbotron class="jumbotron">
+    <div class="container text-center mb-2">
+    <aside class="col fs-5">
         <h4 class="fs-3" href="#about">About SkittyDex</h4>
         <p>
-          SkittyDex is a an app for trainers looking to build their ideal team, <br>
-          whether it be for battling, contest, aesthetics, or even just pokemon they love. <br>
-          The goal is for trainers to share their teams, as well as provide feedback <br>
-          on other trainer's teams to help each other grow. <br>
-          Currently, SkittyDex is optimized for the Sinnoh Region (Pokemon Brilliant Diamond and Shining Pearl) <br>
-          with future updates to expand to other regions and games.<br>
+            SkittyDex is a an app for trainers looking to build their ideal team, <br>
+            whether it be for battling, contest, aesthetics, or even just pokemon they love. <br>
+            The goal is for trainers to share their teams, as well as provide feedback <br>
+            on other trainer's teams to help each other grow. <br>
+            Currently, SkittyDex is optimized for the Sinnoh Region (Pokemon Brilliant Diamond and Shining Pearl) <br>
+            with future updates to expand to other regions and games.<br>
         </p>
-      </div>
-      </div>
     </aside>
+    </div>
+</jumbotron>
 
-    {{!-- teams --}}
+{{!-- team post --}}
+<ul class="post-list">
+    {{#each posts as |post|}}
+    <li>
+        {{> post-info post }}
+    </li>
+    {{/each}}
+</ul>
+{{!-- teams --}}
