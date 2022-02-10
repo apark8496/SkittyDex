@@ -2,7 +2,6 @@
 [
     {
         "id": 1,
-        "no": 001,
         "name": "Turtwig",
         "url": "https://www.serebii.net/swordshield/pokemon/387.png",
         "types": "grass",
@@ -15,10 +14,12 @@
         "types": "grass",
         "superEffective": "water",
         "notEffective": "fire"
-    }
-    
-]
-#003	#389	389	Torterra	Grass	Ground
+    },
+    {},
+    {},
+    {},
+
+    #003	#389	389	Torterra	Grass	Ground
 #004	#390	390	Chimchar	Fire
 #005	#391	391	Monferno	Fire	Fighting
 #006	#392	392	Infernape	Fire	Fighting
@@ -173,3 +174,4 @@
 #149	#483	483	Dialga	Steel	Dragon
 #150	#484	484	Palkia	Water	Dragon
 #151	#490	490	Manaphy	Water
+]
