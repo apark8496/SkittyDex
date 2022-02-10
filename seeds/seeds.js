@@ -1,7 +1,6 @@
 const userData = require('./userData');
 const postData = require('./postData');
 const commentData = require('./commentData');
-const pokemonData = require('./pokemonData');
 
 const { Post, User, Comment, Team } = require('../models');
 
