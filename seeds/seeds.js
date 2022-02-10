@@ -1,9 +1,9 @@
 const userData = require('./userData');
 const postData = require('./postData');
 const commentData = require('./commentData');
-const pokemonData = require('./pokemonData');
+// const pokemonData = require('./pokemonData');
 
-const { Post, User, Comment, Team } = require('../models');
+const { Post, User, Comment, } = require('../models');
 
 const sequelize = require('../config/connection');
 

@@ -36,4 +36,4 @@ Post.hasMany(Comment, {
 
 // Insert TEAM INFO
 
-module.exports = { User, Post, Comment, Team };
+module.exports = { User, Post, Comment };
