@@ -1,0 +1,40 @@
+<div class = "container">
+  <h2><i class="fas fa-edit"></i>
+    Edit Post
+  </h2>
+  <form class="edit-post-form">
+    <div class="form-outline mb-4">
+      <input name="post-title" id="post-title" type="text" value="{{post.title}}" class="form-control" />
+    </div>
+    <div class="form-outline mb-4">
+      <textarea class="form-control" name="post-text" id="post-text" rows="3">{{post.post}}</textarea>
+    </div>
+    <div style="float:right">
+      Posted on {{format_date post.created_at}}
+      |
+      <a href="/post/{{post.id}}">{{post.comments.length}} {{format_plural "comment" post.comments.length}}</a>
+    </div>
+    <button type="submit" class="button"><i class="fas fa-save"></i> Save post</button>
+    <button type="button" id="delete-post-btn" class="button"><i class="fas fa-trash"></i> Delete post</button>
+  </form>
+</div>
+
+<div class="container">
+  <br><br>
+  <h2>Comment</h2>
+  <form class="comment-form">
+    <div class="form-outline mb-4">
+      <textarea class="form-control" name="comment-body" id="comment-body" placeholder="Add a comment..."></textarea>
+    </div>
+    <div>
+      <button type="submit" class="button">Post Comment</button>
+    </div>
+  </form>
+</div>
+
+
+{{> comments post.comments}}
+
+<script src="/js/editPost.js"></script>
+<script src="/js/deletePost.js"></script>
+<script src="/js/comment.js"></script>

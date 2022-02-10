@@ -1,0 +1,32 @@
+[
+    {
+      "comment": "That's very interesting...thank you",
+      "postID": 3,
+      "userID": 1
+    },
+    {
+      "comment": "Definitely remembering this!",
+      "postID": 1,
+      "userID": 4
+    },
+    {
+      "comment": "Do you have anymore info on this?",
+      "postID": 4,
+      "userID": 2
+    },
+    {
+      "comment": "How secure is it?",
+      "postID": 4,
+      "userID": 3
+    },
+    {
+      "comment": "How hard is this to implement?",
+      "postID": 5,
+      "userID": 5
+    },
+    {
+      "comment": "How many types are there?",
+      "postID": 1,
+      "userID": 4
+    }
+  ]

@@ -1,4 +1,4 @@
-# 
+# Skitty Dex
 
 ## Table of Contents
 
@@ -39,5 +39,3 @@ If there are any further questions please feel free to contact me:
 Github: 
 
 Email: 
-# SkittyDex
-# SkittyDex

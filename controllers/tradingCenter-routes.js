@@ -1,0 +1,1 @@
+// where people could talk about trading/battling
