@@ -10,87 +10,550 @@
     },
     {
         "id": 2,
-        "name": "Torterra",
+        "name": "Grotle",
+        "url":"https://www.serebii.net/swordshield/pokemon/388.png",
         "types": "grass",
         "superEffective": "water",
         "notEffective": "fire"
     },
-    {},
-    {},
-    {},
+    {
+        "id": 3,
+        "name": "Torterra",
+        "url":"https://www.serebii.net/swordshield/pokemon/389.png",
+        "types": "grass, ground",
+        "superEffective": "water",
+        "notEffective": "fire"
+    },
+    {
+        "id": 4,
+        "name": "Chimchar",
+        "url":"https://www.serebii.net/swordshield/pokemon/390.png",
+        "types": "fire",
+        "superEffective": "grass",
+        "notEffective": "water"
+    },
+    {
+        "id": 5,
+        "name": "Monferno",
+        "url":"https://www.serebii.net/swordshield/pokemon/391.png",
+        "types": "fire, fighting",
+        "superEffective": "grass",
+        "notEffective": "water"
+    },
+    {
+        "id": 6,
+        "name": "Infernape",
+        "url":"https://www.serebii.net/swordshield/pokemon/392.png",
+        "types": "fire, fighting",
+        "superEffective": "grass",
+        "notEffective": "water"
+    },
+    {
+        "id": 7,
+        "name": "Piplup",
+        "url":"https://www.serebii.net/swordshield/pokemon/393.png",
+        "types": "water",
+        "superEffective": "fire",
+        "notEffective": "grass"
+    },
+    {
+        "id": 8,
+        "name": "Prinplup",
+        "url":"https://www.serebii.net/swordshield/pokemon/394.png",
+        "types": "water",
+        "superEffective": "fire",
+        "notEffective": "grass"
+    },
+    {
+        "id": 9,
+        "name": "Empoleon",
+        "url":"https://www.serebii.net/swordshield/pokemon/395.png",
+        "types": "water, steel",
+        "superEffective": "fire",
+        "notEffective": "grass"
+    },
+    {
+        "id": 10,
+        "name": "Starly",
+        "url":"https://www.serebii.net/swordshield/pokemon/396.png",
+        "types": "normal, flying",
+        "superEffective": "",
+        "notEffective": ""
+    },
+    {
+        "id": 11,
+        "name": "Staravia",
+        "url":"https://www.serebii.net/swordshield/pokemon/397.png",
+        "types": "normal, flying",
+        "superEffective": "",
+        "notEffective": ""
+    },
+    {
+        "id": 12,
+        "name": "Staraptor",
+        "url":"https://www.serebii.net/swordshield/pokemon/398.png",
+        "types": "normal, flying",
+        "superEffective": "",
+        "notEffective": ""
+    },
+    {
+        "id": 13,
+        "name": "Bidoof",
+        "url":"https://www.serebii.net/swordshield/pokemon/399.png",
+        "types": "normal",
+        "superEffective": "",
+        "notEffective": ""
+    },
+    {
+        "id": 14,
+        "name": "Bibarel",
+        "url":"https://www.serebii.net/swordshield/pokemon/400.png",
+        "types": "normal, water",
+        "superEffective": "",
+        "notEffective": ""
+    },
+    {
+        "id": 15,
+        "name": "Kricketot",
+        "url":"https://www.serebii.net/swordshield/pokemon/401.png",
+        "types": "bug",
+        "superEffective": "",
+        "notEffective": ""
+    },
+    {
+        "id": 16,
+        "name": "Kricketot",
+        "url":"https://www.serebii.net/swordshield/pokemon/402.png",
+        "types": "bug",
+        "superEffective": "",
+        "notEffective": ""
+    },
+    {
+        "id": 17,
+        "name": "Shinx",
+        "url":"https://www.serebii.net/swordshield/pokemon/403.png",
+        "types": "electric",
+        "superEffective": "",
+        "notEffective": ""
+    },
+    {
+        "id": 18,
+        "name": "Luxio",
+        "url":"https://www.serebii.net/swordshield/pokemon/404.png",
+        "types": "electric",
+        "superEffective": "",
+        "notEffective": ""
+    },
+    {
+        "id": 19,
+        "name": "Luxray",
+        "url":"https://www.serebii.net/swordshield/pokemon/405.png",
+        "types": "electric",
+        "superEffective": "",
+        "notEffective": ""
+    },
+    {
+        "id": 20,
+        "name": "Abra",
+        "url":"https://www.serebii.net/swordshield/pokemon/063.png",
+        "types": "Psychic",
+        "superEffective": "",
+        "notEffective": ""
+    },
+    {
+        "id": 21,
+        "name": "Kadabra",
+        "url":"https://www.serebii.net/swordshield/pokemon/064.png",
+        "types": "Psychic",
+        "superEffective": "",
+        "notEffective": ""
+    },
+    {
+        "id": 22,
+        "name": "Alakazam",
+        "url":"https://www.serebii.net/swordshield/pokemon/064.png",
+        "types": "Psychic",
+        "superEffective": "",
+        "notEffective": ""
+    },
+    {
+        "id": 23,
+        "name": "Magikarp",
+        "url":"https://www.serebii.net/swordshield/pokemon/129.png",
+        "types": "water",
+        "superEffective": "",
+        "notEffective": ""
+    },
+    {
+        "id": 24,
+        "name": "Gyarados",
+        "url":"https://www.serebii.net/swordshield/pokemon/130.png",
+        "types": "water, flying",
+        "superEffective": "",
+        "notEffective": ""
+    },
+    {
+        "id": 25,
+        "name": "Budew",
+        "url":"https://www.serebii.net/swordshield/pokemon/406.png",
+        "types": "Grass, Poison",
+        "superEffective": "",
+        "notEffective": ""
+    },
+    {
+        "id": 26,
+        "name": "Roselia",
+        "url":"https://www.serebii.net/swordshield/pokemon/315.png",
+        "types": "Grass, Poison",
+        "superEffective": "",
+        "notEffective": ""
+    },
+    {
+        "id": 27,
+        "name": "Roserade",
+        "url":"https://www.serebii.net/swordshield/pokemon/407.png",
+        "types": "Grass, Poison",
+        "superEffective": "",
+        "notEffective": ""
+    },
+    {
+        "id": 28,
+        "name": "Zubat",
+        "url":"https://www.serebii.net/swordshield/pokemon/041.png",
+        "types": "Poison, flying",
+        "superEffective": "",
+        "notEffective": ""
+    },
+    {
+        "id": 29,
+        "name": "Golbat",
+        "url":"https://www.serebii.net/swordshield/pokemon/042.png",
+        "types": "Poison, flying",
+        "superEffective": "",
+        "notEffective": ""
+    },
+    {
+        "id": 30,
+        "name": "Crobat",
+        "url":"https://www.serebii.net/swordshield/pokemon/169.png",
+        "types": "Poison, flying",
+        "superEffective": "",
+        "notEffective": ""
+    },
+    {
+        "id": 31,
+        "name": "Geodude",
+        "url":"https://www.serebii.net/swordshield/pokemon/074.png",
+        "types": "Rock, Ground",
+        "superEffective": "",
+        "notEffective": ""
+    },
+    {
+        "id": 32,
+        "name": "Graveler",
+        "url":"https://www.serebii.net/swordshield/pokemon/075.png",
+        "types": "Rock, Ground",
+        "superEffective": "",
+        "notEffective": ""
+    },
+    {
+        "id": 33,
+        "name": "Golem",
+        "url":"https://www.serebii.net/swordshield/pokemon/076.png",
+        "types": "Rock, Ground",
+        "superEffective": "",
+        "notEffective": ""
+    },
+    {
+        "id": 34,
+        "name": "Onix",
+        "url":"https://www.serebii.net/swordshield/pokemon/095.png",
+        "types": "Rock, Ground",
+        "superEffective": "",
+        "notEffective": ""
+    },
+    {
+        "id": 35,
+        "name": "Steelix",
+        "url":"https://www.serebii.net/swordshield/pokemon/208.png",
+        "types": "Steel, Ground",
+        "superEffective": "",
+        "notEffective": ""
+    },
+    {
+        "id": 36,
+        "name": "Cranidos",
+        "url":"https://www.serebii.net/swordshield/pokemon/408.png",
+        "types": "Rock",
+        "superEffective": "",
+        "notEffective": ""
+    },
+    {
+        "id": 37,
+        "name": "Rampardos",
+        "url":"https://www.serebii.net/swordshield/pokemon/409.png",
+        "types": "Rock",
+        "superEffective": "",
+        "notEffective": ""
+    },
+    {
+        "id": 38,
+        "name": "Shieldon",
+        "url":"https://www.serebii.net/swordshield/pokemon/410.png",
+        "types": "Rock, steel",
+        "superEffective": "",
+        "notEffective": ""
+    },
+    {
+        "id": 39,
+        "name": "Bastiodon",
+        "url":"https://www.serebii.net/swordshield/pokemon/411.png",
+        "types": "Rock, steel",
+        "superEffective": "",
+        "notEffective": ""
+    },
+    {
+        "id": 40,
+        "name": "Machop",
+        "url":"https://www.serebii.net/swordshield/pokemon/066.png",
+        "types": "fighting",
+        "superEffective": "",
+        "notEffective": ""
+    },
+    {
+        "id": 41,
+        "name": "Machoke",
+        "url":"https://www.serebii.net/swordshield/pokemon/067.png",
+        "types": "fighting",
+        "superEffective": "",
+        "notEffective": ""
+    },
+    {
+        "id": 42,
+        "name": "Machamp",
+        "url":"https://www.serebii.net/swordshield/pokemon/068.png",
+        "types": "fighting",
+        "superEffective": "",
+        "notEffective": ""
+    },
+    {
+        "id": 43,
+        "name": "Psyduck",
+        "url":"https://www.serebii.net/swordshield/pokemon/054.png",
+        "types": "water",
+        "superEffective": "",
+        "notEffective": ""
+    },
+    {
+        "id": 44,
+        "name": "Golduck",
+        "url":"https://www.serebii.net/swordshield/pokemon/055.png",
+        "types": "water",
+        "superEffective": "",
+        "notEffective": ""
+    },
+    {
+        "id": 45,
+        "name": "Burmy",
+        "url":"https://www.serebii.net/swordshield/pokemon/412.png",
+        "types": "bug",
+        "superEffective": "",
+        "notEffective": ""
+    },
+    {
+        "id": 46,
+        "name": "Wormadam",
+        "url":"https://www.serebii.net/swordshield/pokemon/413.png",
+        "types": "bug, grass",
+        "superEffective": "",
+        "notEffective": ""
+    },
+    {
+        "id": 47,
+        "name": "Mothim",
+        "url":"https://www.serebii.net/swordshield/pokemon/414.png",
+        "types": "bug, flying",
+        "superEffective": "",
+        "notEffective": ""
+    },
+    {
+        "id": 48,
+        "name": "Wurmple",
+        "url":"https://www.serebii.net/swordshield/pokemon/265.png",
+        "types": "bug",
+        "superEffective": "",
+        "notEffective": ""
+    },
+    {
+        "id": 49,
+        "name": "Silcoon",
+        "url":"https://www.serebii.net/swordshield/pokemon/266.png",
+        "types": "bug",
+        "superEffective": "",
+        "notEffective": ""
+    },
+    {
+        "id": 50,
+        "name": "Beautifly",
+        "url":"https://www.serebii.net/swordshield/pokemon/267.png",
+        "types": "bug, flying",
+        "superEffective": "",
+        "notEffective": ""
+    },
+    {
+        "id": 51,
+        "name": "Cascoon",
+        "url":"https://www.serebii.net/swordshield/pokemon/268.png",
+        "types": "bug",
+        "superEffective": "",
+        "notEffective": ""
+    },
+    {
+        "id": 52,
+        "name": "Dustox",
+        "url":"https://www.serebii.net/swordshield/pokemon/269.png",
+        "types": "bug, poison",
+        "superEffective": "",
+        "notEffective": ""
+    },
+    {
+        "id": 53,
+        "name": "Combee",
+        "url":"https://www.serebii.net/swordshield/pokemon/415.png",
+        "types": "bug, flying",
+        "superEffective": "",
+        "notEffective": ""
+    },
+    {
+        "id": 54,
+        "name": "Vespiquen",
+        "url":"https://www.serebii.net/swordshield/pokemon/416.png",
+        "types": "bug, flying",
+        "superEffective": "",
+        "notEffective": ""
+    },
+    {
+        "id": 55,
+        "name": "Pachirisu",
+        "url":"https://www.serebii.net/swordshield/pokemon/417.png",
+        "types": "electric",
+        "superEffective": "",
+        "notEffective": ""
+    },
+    {
+        "id": 56,
+        "name": "Buizel",
+        "url":"https://www.serebii.net/swordshield/pokemon/418.png",
+        "types": "water",
+        "superEffective": "",
+        "notEffective": ""
+    },
+    {
+        "id": 57,
+        "name": "Floatzel",
+        "url":"https://www.serebii.net/swordshield/pokemon/419.png",
+        "types": "water",
+        "superEffective": "",
+        "notEffective": ""
+    },
+    {
+        "id": 58,
+        "name": "Cherubi",
+        "url":"https://www.serebii.net/swordshield/pokemon/420.png",
+        "types": "grass",
+        "superEffective": "",
+        "notEffective": ""
+    },
+    {
+        "id": 59,
+        "name": "Cherrim",
+        "url":"https://www.serebii.net/swordshield/pokemon/421.png",
+        "types": "grass",
+        "superEffective": "",
+        "notEffective": ""
+    },
+    {
+        "id": 60,
+        "name": "Shellos",
+        "url":"https://www.serebii.net/swordshield/pokemon/422.png",
+        "types": "water",
+        "superEffective": "",
+        "notEffective": ""
+    },
+    {
+        "id": 61,
+        "name": "Gastrodon",
+        "url":"https://www.serebii.net/swordshield/pokemon/423.png",
+        "types": "water, ground",
+        "superEffective": "",
+        "notEffective": ""
+    },
+    {
+        "id": 62,
+        "name": "HeraCross",
+        "url":"https://www.serebii.net/swordshield/pokemon/214.png",
+        "types": "bug, fighting",
+        "superEffective": "",
+        "notEffective": ""
+    },
+    {
+        "id": 63,
+        "name": "Aipom",
+        "url":"https://www.serebii.net/swordshield/pokemon/190.png",
+        "types": "normal",
+        "superEffective": "",
+        "notEffective": ""
+    },
+    {
+        "id": 64,
+        "name": "Ambipom",
+        "url":"https://www.serebii.net/swordshield/pokemon/424.png",
+        "types": "normal",
+        "superEffective": "",
+        "notEffective": ""
+    },
+    {
+        "id": 65,
+        "name": "Drifloon",
+        "url":"https://www.serebii.net/swordshield/pokemon/425.png",
+        "types": "ghost, flying",
+        "superEffective": "",
+        "notEffective": ""
+    },
+    {
+        "id": 66,
+        "name": "Drifblim",
+        "url":"https://www.serebii.net/swordshield/pokemon/426.png",
+        "types": "ghost, flying",
+        "superEffective": "",
+        "notEffective": ""
+    },
+    {
+        "id": 67,
+        "name": "Buneary",
+        "url":"https://www.serebii.net/swordshield/pokemon/427.png",
+        "types": "normal",
+        "superEffective": "",
+        "notEffective": ""
+    },
+    {
+        "id": 68,
+        "name": "Lopunny",
+        "url":"https://www.serebii.net/swordshield/pokemon/428.png",
+        "types": "normal",
+        "superEffective": "",
+        "notEffective": ""
+    },
 
-    #003	#389	389	Torterra	Grass	Ground
-#004	#390	390	Chimchar	Fire
-#005	#391	391	Monferno	Fire	Fighting
-#006	#392	392	Infernape	Fire	Fighting
-#007	#393	393	Piplup	Water
-#008	#394	394	Prinplup	Water
-#009	#395	395	Empoleon	Water	Steel
-#010	#396	396	Starly	Normal	Flying
-#011	#397	397	Staravia	Normal	Flying
-#012	#398	398	Staraptor	Normal	Flying
-#013	#399	399	Bidoof	Normal
-#014	#400	400	Bibarel	Normal	Water
-#015	#401	401	Kricketot	Bug
-#016	#402	402	Kricketune	Bug
-#017	#403	403	Shinx	Electric
-#018	#404	404	Luxio	Electric
-#019	#405	405	Luxray	Electric
-#020	#063	063	Abra	Psychic
-#021	#064	064	Kadabra	Psychic
-#022	#065	065	Alakazam	Psychic
-#023	#129	129	Magikarp	Water
-#024	#130	130	Gyarados	Water	Flying
-#025	#406	406	Budew	Grass	Poison
-#026	#315	315	Roselia	Grass	Poison
-#027	#407	407	Roserade	Grass	Poison
-#028	#041	041	Zubat	Poison	Flying
-#029	#042	042	Golbat	Poison	Flying
-#030	#169	169	Crobat	Poison	Flying
-#031	#074	074	Geodude	Rock	Ground
-#032	#075	075	Graveler	Rock	Ground
-#033	#076	076	Golem	Rock	Ground
-#034	#095	095	Onix	Rock	Ground
-#035	#208	208	Steelix	Steel	Ground
-#036	#408	408	Cranidos	Rock
-#037	#409	409	Rampardos	Rock
-#038	#410	410	Shieldon	Rock	Steel
-#039	#411	411	Bastiodon	Rock	Steel
-#040	#066	066	Machop	Fighting
-#041	#067	067	Machoke	Fighting
-#042	#068	068	Machamp	Fighting
-#043	#054	054	Psyduck	Water
-#044	#055	055	Golduck	Water
-#045	#412	412	Burmy	Bug
-#045	#412	412G	Burmy	Bug
-#045	#412	412S	Burmy	Bug
-#046	#413	413	Wormadam	Bug	Grass
-#046	#413	413G	Wormadam	Bug	Ground
-#046	#413	413S	Wormadam	Bug	Steel
-#047	#414	414	Mothim	Bug	Flying
-#048	#265	265	Wurmple	Bug
-#049	#266	266	Silcoon	Bug
-#050	#267	267	Beautifly	Bug	Flying
-#051	#268	268	Cascoon	Bug
-#052	#269	269	Dustox	Bug	Poison
-#053	#415	415	Combee	Bug	Flying
-#054	#416	416	Vespiquen	Bug	Flying
-#055	#417	417	Pachirisu	Electric
-#056	#418	418	Buizel	Water
-#057	#419	419	Floatzel	Water
-#058	#420	420	Cherubi	Grass
-#059	#421	421	Cherrim	Grass
-#060	#422	422	Shellos	Water
-#060	#422	422E	Shellos	Water
-#061	#423	423	Gastrodon	Water	Ground
-#061	#423	423E	Gastrodon	Water	Ground
-#062	#214	214	Heracross	Bug	Fighting
-#063	#190	190	Aipom	Normal
-#064	#424	424	Ambipom	Normal
-#065	#425	425	Drifloon	Ghost	Flying
-#066	#426	426	Drifblim	Ghost	Flying
-#067	#427	427	Buneary	Normal
-#068	#428	428	Lopunny	Normal
+
+        
+        
+  
+
+
+
+
+
 #069	#092	092	Gastly	Ghost	Poison
 #070	#093	093	Haunter	Ghost	Poison
 #071	#094	094	Gengar	Ghost	Poison
