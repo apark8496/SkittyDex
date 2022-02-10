@@ -1,0 +1,10 @@
+[
+    {
+    "id": 1,
+    "name": "Turtwig",
+    "types": "grass",
+    "strength": "water",
+    "weakness": "fire"
+    },
+    {}
+]
