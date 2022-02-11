@@ -544,6 +544,47 @@
         "superEffective": "",
         "notEffective": ""
     },
+    {
+        "id": 69,
+        "name": "Gastly",
+        "url":"https://www.serebii.net/swordshield/pokemon/092.png",
+        "types": "ghost, poison",
+        "superEffective": "",
+        "notEffective": ""
+    },
+    {
+        "id": 70,
+        "name": "Haunter",
+        "url":"https://www.serebii.net/swordshield/pokemon/093.png",
+        "types": "ghost, poison",
+        "superEffective": "",
+        "notEffective": ""
+    },
+    {
+        "id": 71,
+        "name": "Gengar",
+        "url":"https://www.serebii.net/swordshield/pokemon/094.png",
+        "types": "ghost, poison",
+        "superEffective": "",
+        "notEffective": ""
+    },
+    {
+        "id": 72,
+        "name": "Misdreavus",
+        "url":"https://www.serebii.net/swordshield/pokemon/200.png",
+        "types": "ghost",
+        "superEffective": "",
+        "notEffective": ""
+    },
+    {
+        "id": 73,
+        "name": "Mismagius",
+        "url":"https://www.serebii.net/swordshield/pokemon/429.png",
+        "types": "ghost",
+        "superEffective": "",
+        "notEffective": ""
+    },
+
 
 
         
@@ -554,9 +595,7 @@
 
 
 
-#069	#092	092	Gastly	Ghost	Poison
-#070	#093	093	Haunter	Ghost	Poison
-#071	#094	094	Gengar	Ghost	Poison
+
 #072	#200	200	Misdreavus	Ghost
 #073	#429	429	Mismagius	Ghost
 #074	#198	198	Murkrow	Dark	Flying
