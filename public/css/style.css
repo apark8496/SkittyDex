@@ -3,21 +3,21 @@
 }
 
 body {
-  font: 16px/1.5 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    overflow-y: scroll
+  font: 16px/1.5 "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  overflow-y: scroll;
+  background-image: linear-gradient(to bottom, #feada6 0%, #f5efef 100%);
 }
 
 /* navbar/header style */
 header {
   margin-bottom: 5rem;
-  opacity: 75%;
 }
 .navbar-brand {
   font-size: 3em;
 }
 
 .navbar-brand a {
-  color: black;
+  color: rgb(255, 255, 255);
   margin-left: 2rem;
   text-decoration: none;
   cursor: pointer;
@@ -33,17 +33,17 @@ header {
 }
 
 .nav-item a {
-    color: #ee9ca7;
+  color: #ffffff;
+  font-weight: 600;
 }
 
 .nav-item a:hover {
-  color: #abbaab;
+  color: #000000;
 }
 
 /* body styles */
-aside h4 {
-  background-color:  #f1bec5;
-  opacity: 75%;
+aside {
+  background-color: #ffffff;
   border-radius: 10px;
 }
 
@@ -76,15 +76,15 @@ input[type="text"]:focus {
 .card {
   margin: 2em;
   border-radius: 5px;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   border-color: #000000;
   opacity: 75%;
 }
 
 .card-header {
   font-size: 1.2rem;
-  background-color:#fb1b1b;
 }
+
 .card-header a {
   color: #000000;
   font-weight: 600;
@@ -137,8 +137,4 @@ button {
   text-decoration: none;
 }
 
-/* footer Style */
-#footer {
-  background-color: #f1bec5;
-  opacity: 50%;
-}
+
