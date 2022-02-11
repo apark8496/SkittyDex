@@ -1,5 +1,5 @@
 {
-  "name": "SkittyDex_Pokemon-Team-Builder",
+  "name": "skittydex_pokemon-team-builder",
   "version": "1.0.0",
   "description": "## Table of Contents",
   "main": "server.js",
@@ -14,7 +14,6 @@
     "mysql2": "^2.3.3",
     "sequelize": "^6.15.1"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
@@ -27,8 +26,6 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "s"
-  },
-  "homepage": ""
+  "homepage": "",
+  "devDependencies": {}
 }
