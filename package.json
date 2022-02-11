@@ -1,5 +1,5 @@
 {
-  "name": "SkittyDex_Pokemon-Team-Builder",
+  "name": "skittydex_pokemon-team-builder",
   "version": "1.0.0",
   "description": "## Table of Contents",
   "main": "server.js",
@@ -26,8 +26,5 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "s"
-  },
   "homepage": ""
 }
