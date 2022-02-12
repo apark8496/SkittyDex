@@ -1,4 +1,4 @@
-const { PokeDex } = require('../models');
+const { Pokedex } = require('../models');
 
 const pokedex = [
       {
@@ -666,14 +666,6 @@ const pokedex = [
         "notEffective": ""
     },
     {
-        "id": 83,
-        "name": "Chimecho",
-        "image": "https://www.serebii.net/swordshield/pokemon/358.png",
-        "types": "Psychic",
-        "superEffective": "",
-        "notEffective": ""
-    },
-    {
         "id": 84,
         "name": "Stunky",
         "image": "https://www.serebii.net/swordshield/pokemon/434.png",
@@ -1066,14 +1058,6 @@ const pokedex = [
         "notEffective": ""
     },
     {
-        "id": 132,
-        "name": "Remoraid",
-        "image": "https://www.serebii.net/swordshield/pokemon/223.png",
-        "types": "Water",
-        "superEffective": "",
-        "notEffective": ""
-    },
-    {
         "id": 133,
         "name": "Octillery",
         "image": "https://www.serebii.net/swordshield/pokemon/224.png",
@@ -1227,6 +1211,6 @@ const pokedex = [
     }
 ]
 
-const seedPokedex = () => PokeDex.bulkCreate(pokedex);
+const seedPokedex = () => Pokedex.bulkCreate(pokedex);
   
 module.exports = seedPokedex;

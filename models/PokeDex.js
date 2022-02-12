@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
-class Team extends Model { }
+class Pokedex extends Model { }
 
-Team.init(
+Pokedex.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -16,7 +16,11 @@ Team.init(
             allowNull: false
         },
         image: {
-            type: DataTypes.TEXT,
+            type: DataTypes.STRING,
+            allowNull: true,
+        },
+        types: {
+            type: DataTypes.STRING,
             allowNull: false,
         },
         superEffective: {
@@ -25,22 +29,22 @@ Team.init(
         },
         notEffective: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
         },
         userID: {
             type: DataTypes.INTEGER,
             references: {
                 model: 'user',
-                key: 'id'
-            }
-        }
-    },        
+                key: 'id',
+            },
+        },
+    },
     {
         sequelize,
         freezeTableName: true,
         underscored: true,
-        modelName: 'team',
+        modelName: 'pokedex',
     }
 );
 
-module.exports = PokeDex;
+module.exports = Pokedex;
