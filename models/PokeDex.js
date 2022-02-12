@@ -43,4 +43,4 @@ Team.init(
     }
 );
 
-module.exports = Team;
+module.exports = PokeDex;

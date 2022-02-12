@@ -1,4 +1,6 @@
-[
+const { Post } = require('../models');
+
+const postData = [
     {
       "title": "Looking for an Umbreon",
       "post": "To complete my evvee collection I need an Umbreon. Does anyone have one they are willing to trade?",
@@ -17,3 +19,6 @@
     }
   ]
   
+  const seedPost = () => Post.bulkCreate(postData);
+  
+  module.exports = seedPost;

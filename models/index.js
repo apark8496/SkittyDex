@@ -1,7 +1,7 @@
 const User = require('./User');
 const Post = require('./Post');
 const Comment = require('./Comment');
-const Team = require('./Team');
+const Pokedex = require('./PokeDex');
 
 const { template } = require('handlebars');
 
@@ -9,7 +9,7 @@ User.hasMany(Post, {
     foreignKey: 'userID'
 });
 
-User.hasMany(Team, {
+User.hasMany(Pokedex, {
     foreignKey: 'userID',
 });
 
@@ -17,7 +17,7 @@ Post.belongsTo(User, {
     foreignKey: 'userID'
 });
 
-Team.belongsTo(User, {
+Pokedex.belongsTo(User, {
     foreignKey: 'userID'    
 });
 
@@ -46,4 +46,4 @@ Post.hasMany(Comment, {
 })
 
 
-module.exports = { User, Post, Comment, Team };
+module.exports = { User, Post, Comment, Pokedex };
