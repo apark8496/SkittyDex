@@ -1,8 +1,9 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Post, User, Comment } = require('../models');
+const { Post, User, Comment, Pokedex } = require('../models');
 const withAuth = require('../utils/auth');
 
+// get all post
 router.get('/', withAuth, (req, res) => {
     Post.findAll({
       where: {
@@ -39,6 +40,7 @@ router.get('/', withAuth, (req, res) => {
       });
   });
 
+// get one specific post
 router.get('/edit/:id', withAuth, (req, res) => {
   Post.findOne({
     where: {
@@ -78,5 +80,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
       res.status(500).json(err);
     });
 });
+
+// add the ability to get pokedex into dashboard
 
 module.exports = router;

@@ -9,15 +9,15 @@ Pokedex.init(
             type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
-            autoIncrement: true
+            autoIncrement: true,
         },
         name: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: false,
         },
         image: {
             type: DataTypes.STRING,
-            allowNull: true,
+            allowNull: false,
         },
         types: {
             type: DataTypes.STRING,
@@ -25,18 +25,11 @@ Pokedex.init(
         },
         superEffective: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
         },
         notEffective: {
             type: DataTypes.STRING,
             allowNull: true,
-        },
-        userID: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'user',
-                key: 'id',
-            },
         },
     },
     {
@@ -48,3 +41,8 @@ Pokedex.init(
 );
 
 module.exports = Pokedex;
+
+
+
+
+
