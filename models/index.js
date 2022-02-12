@@ -1,13 +1,24 @@
 const User = require('./User');
 const Post = require('./Post');
 const Comment = require('./Comment');
+const Team = require('./Team');
+
+const { template } = require('handlebars');
 
 User.hasMany(Post, {
     foreignKey: 'userID'
 });
 
+User.hasMany(Team, {
+    foreignKey: 'userID',
+});
+
 Post.belongsTo(User, {
     foreignKey: 'userID'
+});
+
+Team.belongsTo(User, {
+    foreignKey: 'userID'    
 });
 
 Comment.belongsTo(User, {
@@ -34,6 +45,5 @@ Post.hasMany(Comment, {
     hooks:true
 })
 
-// Insert TEAM INFO
 
-module.exports = { User, Post, Comment };
+module.exports = { User, Post, Comment, Team };

@@ -755,7 +755,7 @@
         "id": 94,
         "name": "Mime Jr.",
         "image": "https://www.serebii.net/swordshield/pokemon/439.png",
-        "types": "Psychic",
+        "types": "Psychic, Fairy",
         "superEffective": "",
         "notEffective": ""
     },
@@ -795,7 +795,7 @@
         "id": 99,
         "name": "Cleffa",
         "image": "https://www.serebii.net/swordshield/pokemon/173.png",
-        "types": "Normal",
+        "types": "Fairy",
         "superEffective": "",
         "notEffective": ""
     },
@@ -803,7 +803,7 @@
         "id": 100,
         "name": "Clefairy",
         "image": "https://www.serebii.net/swordshield/pokemon/035.png",
-        "types": "Normal",
+        "types": "Fairy",
         "superEffective": "",
         "notEffective": ""
     },
@@ -811,7 +811,7 @@
         "id": 101,
         "name": "Clefable",
         "image": "https://www.serebii.net/swordshield/pokemon/036.png",
-        "types": "Normal",
+        "types": "Fairy",
         "superEffective": "",
         "notEffective": ""
     },
@@ -995,7 +995,7 @@
         "id": 124,
         "name": "Azurill",
         "image": "https://www.serebii.net/swordshield/pokemon/298.png",
-        "types": "Normal",
+        "types": "Normal, Fairy",
         "superEffective": "",
         "notEffective": ""
     },
@@ -1003,7 +1003,7 @@
         "id": 125,
         "name": "Marill",
         "image": "https://www.serebii.net/swordshield/pokemon/183.png",
-        "types": "Water",
+        "types": "Water, Fairy",
         "superEffective": "",
         "notEffective": ""
     },
@@ -1011,7 +1011,7 @@
         "id": 126,
         "name": "Azumarill",
         "image": "https://www.serebii.net/swordshield/pokemon/184.png",
-        "types": "Water",
+        "types": "Water, Fairy",
         "superEffective": "",
         "notEffective": ""
     },

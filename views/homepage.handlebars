@@ -1,31 +1,26 @@
 {{!-- about section --}}
-<main class="col">
-    <div class="container text-center mb-3">
-        <aside class="fs-5">
-            <h4 class="fs-3 mb-3" href="#about">About SkittyDex</h4>
-            <p>
-                SkittyDex is a an app for trainers looking to build their ideal team, <br>
-                whether it be for battling, contest, aesthetics, or even just pokemon they love. <br>
-                The goal is for trainers to share their teams, as well as provide feedback <br>
-                on other trainer's teams to help each other grow. <br>
-                Currently, SkittyDex is optimized for the Sinnoh Region (Pokemon Brilliant Diamond and Shining Pearl)
-                <br>
-                with future updates to expand post game and to other regions and games.<br>
-                <iframe id="video" class="m-4" width="560" height="315" src="https://www.youtube.com/embed/iVVGiq5mAYw"
-                    title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen></iframe>
+<main class="container">
+    <div class="row justify-content-between">
+        <aside class="col-md-3 fs-5 p-3">
+            <h4 class="fs-3 text-center" href="#about">About SkittyDex</h4>
+            <p class="p-2">
+                SkittyDex is a an app for trainers looking to build their ideal team,
+                whether it be for battling, contest, aesthetics, or even just pokemon they love.
+                The goal is for trainers to share their teams, as well as provide feedback
+                on other trainer's teams to help each other grow.
+                Currently, SkittyDex is optimized for the Sinnoh Regional pokedex (Pokemon Brilliant Diamond and Shining
+                Pearl)
+                with future updates to expand post game and to other regions and games.
             </p>
         </aside>
+        <div class="col-md-9">
+            <ul class="post-list">
+                {{#each posts as |post|}}
+                <li>
+                    {{> post-info post }}
+                </li>
+                {{/each}}
+            </ul>
+        </div>
     </div>
 </main>
-
-{{!-- team post --}}
-<ul class="post-list">
-    {{#each posts as |post|}}
-    <li>
-        {{> post-info post }}
-    </li>
-    {{/each}}
-</ul>
-{{!-- teams --}}

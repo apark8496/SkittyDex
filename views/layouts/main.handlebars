@@ -37,23 +37,21 @@
         {{/if}}
       </nav>
   </header>
-  <main>
+  <main class="mb-5">
     {{!-- main content --}}
     {{{body}}}
   </main>
   {{!-- footer --}}
-  <footer id="footer" class="fs-5 text-center">
+  <footer id="footer" class="fs-6 text-center">
+    <div class="mb-3">
     <a href="/">Home</a>
     <a href="/dashboard">Dashboard</a>
     <a href="/Battlecenter">Battlecenter</a>
+    </div>
 
+    <p> © 2022 SkittyDex
     <br>
-
-    <p> © 2022 SkittyDex</p>
-
-    <br>
-
-    <p>Pokémon characters and names are copyright © The Pokémon Company and/or Nintendo.</p>
+    Pokémon is © The Pokémon Company and/or Nintendo.</p>
   </footer>
 
   {{#if logged_in}}
