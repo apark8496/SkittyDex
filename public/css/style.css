@@ -128,7 +128,7 @@ input[type="text"]:focus {
 .card {
   margin: 2em;
   border-radius: 10px;
-  background-color: #ffffff;
+  background-color: #ffdde1;
   border-color: #000000;
   opacity: 75%;
 }
