@@ -1,5 +1,4 @@
-{{!-- User's Team --}}
-{{!-- Pokedex --}}
+
 
 {{!-- New Post --}}
 <div class="container">
@@ -32,7 +31,7 @@
   {{#if posts.length}}
   <section>
     <h2>Your Posts</h2>
-    <ul class="list-group-flush">
+    <ul class="list-group">
       {{#each posts as |post|}}
       <li class="list-group-item">
         {{> post-info post}}

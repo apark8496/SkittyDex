@@ -1,8 +1,7 @@
-{{!-- about section --}}
-<main class="container">
-    <div class="row justify-content-between">
-        <aside class="col-md-3 fs-5 p-3">
-            <h4 class="fs-3 text-center" href="#about">About SkittyDex</h4>
+<section class="jumbotron">
+    <main class="container">
+        <aside class="fs-5 p-3 opacity-50">
+            <h4 class="fs-3 text-center">About SkittyDex</h4>
             <p class="p-2">
                 SkittyDex is a an app for trainers looking to build their ideal team,
                 whether it be for battling, contest, aesthetics, or even just pokemon they love.
@@ -13,14 +12,17 @@
                 with future updates to expand post game and to other regions and games.
             </p>
         </aside>
-        <div class="col-md-9">
-            <ul class="post-list">
-                {{#each posts as |post|}}
-                <li>
-                    {{> post-info post }}
-                </li>
-                {{/each}}
-            </ul>
-        </div>
+</section>
+<div class="container">
+    <h3 class="fs-3 text-center">Looking to trade or battle in game?</h3>
+    <div class="post">
+        <ul class="post-list">
+            {{#each posts as |post|}}
+            <li>
+                {{> post-info post }}
+            </li>
+            {{/each}}
+        </ul>
     </div>
+</div>
 </main>

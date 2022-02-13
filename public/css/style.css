@@ -8,11 +8,15 @@ body {
   background-color: #ffffff;
 }
 
+.dark-mode {
+  background-color: black;
+}
+
 /* navbar/header style */
 header {
-  margin-bottom: 3rem;
   background-color: #ffdde1;
 }
+
 .navbar-brand {
   font-size: 3em;
 }
@@ -25,12 +29,12 @@ header {
 }
 
 .navbar-brand a:hover {
-  color: #000000;
+  color: #a66e8a;
 }
 
 #logo {
-  width: 10%;
-  height: 10%;
+  width: 9%;
+  height: 9%;
 }
 
 .nav-item a {
@@ -44,9 +48,10 @@ header {
 }
 
 .nav-item a:hover {
-  color: #000000;
+  color: #a66e8a;
 }
 
+/* footer styles */
 footer a {
   color: #e76c89;
   margin: 1em;
@@ -54,20 +59,20 @@ footer a {
 }
 
 footer a:hover {
-  color: #000000;
+  color: #a66e8a;
 }
 
 /* body styles */
 aside {
-  background-color: #ffdde1;
+  background-color: #a66e8a;
   border-radius: 10px;
-  opacity: 50%;
   color: #000000;
+  margin-top: 2em;
   margin-bottom: 4em;
 }
 
 aside:hover {
-  color: #e76c89;
+  color: #ffdde1;
 }
 
 #video {
@@ -77,16 +82,27 @@ aside:hover {
 /* login style */
 .input-group {
   margin: 2em;
-  max-width: 50rem;
+  max-width: 75em;
 }
 
 input[type="text"]:focus {
-  background-color: #f1bec5;
+  background-color: #E4ABA2;
 }
 
 #login,
 #signup {
   margin: 1rem;
+}
+
+.signup-form,
+.login-form,
+.edit-post-form,
+.comment-form {
+  border-radius: 20px;
+  background-color: #ffdde1;
+  margin-top: 3em;
+  padding: 20px;
+  opacity: 75%;
 }
 
 /* post/comment style */
@@ -106,7 +122,7 @@ input[type="text"]:focus {
 .list-group-item {
   background-color: #ffdde1;
   margin: 1em;
-  border-radius: 15px;
+  border-radius: 20px;
 }
 
 .card {
@@ -129,7 +145,7 @@ input[type="text"]:focus {
 }
 
 .card-header a:hover {
-  color: #feada6;
+  color: #e76c89;
 }
 
 .card-body {
@@ -151,13 +167,13 @@ button {
 }
 
 .button {
-  background-image: linear-gradient(to right, #ee9ca7 0%, #ffdde1  51%, #ee9ca7  100%);
+  background-image: linear-gradient(to right, #ECE9E6 0%, #FFFFFF  51%, #ECE9E6  100%);
 }
 
 .button {
   text-align: center;
   transition: 0.5s;
-  background-size: 200% auto;
+  background-size: 00% auto;
   border-radius: 5px;
   display: block;
   border: none;
@@ -168,4 +184,3 @@ button {
   color: #abbaab;
   text-decoration: none;
 }
-
