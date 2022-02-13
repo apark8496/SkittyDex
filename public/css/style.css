@@ -5,12 +5,13 @@
 body {
   font: 16px/1.5 "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   overflow-y: scroll;
-  background-image: linear-gradient(to top, #feada6 0%, #f5efef 100%);
+  background-color: #ffffff;
 }
 
 /* navbar/header style */
 header {
   margin-bottom: 3rem;
+  background-color: #ffdde1;
 }
 .navbar-brand {
   font-size: 3em;
@@ -58,7 +59,7 @@ footer a:hover {
 
 /* body styles */
 aside {
-  background-color: #ffffff;
+  background-color: #ffdde1;
   border-radius: 10px;
   opacity: 50%;
   color: #000000;
@@ -89,11 +90,6 @@ input[type="text"]:focus {
 }
 
 /* post/comment style */
-.list-group-item {
-  background-color: #ffffff;
-  border-radius: 15px;
-  margin: 1em;
-}
 .post-list {
   list-style: none;
   margin: 2em;
@@ -102,9 +98,15 @@ input[type="text"]:focus {
 
 #new-post {
   margin: 2rem;
-  background-color: #ffffff;
+  background-color: #ffdde1;
   border-radius: 15px;
   padding: 20px;
+}
+
+.list-group-item {
+  background-color: #ffdde1;
+  margin: 1em;
+  border-radius: 15px;
 }
 
 .card {
