@@ -1,0 +1,29 @@
+const { Comment } = require('../models');
+
+const commentData = [
+    {
+      "comment": "I love your team! So cute! How do they do in battle?",
+      "postID": 3,
+      "userID": 1
+    },
+    {
+      "comment": "If you have a Machoke I'd love it so I can get a Machamp",
+      "postID": 1,
+      "userID": 4
+    },
+    {
+      "comment": "Strongman fighter pokemon, I love it",
+      "postID": 3,
+      "userID": 3
+    },
+
+    {
+      "comment": "Are you a shiny farmer?",
+      "postID": 2,
+      "userID": 4
+    }
+  ]
+
+  const seedComment = () => Comment.bulkCreate(commentData);
+  
+  module.exports = seedComment;

@@ -1,0 +1,28 @@
+<section class="jumbotron">
+    <main class="container">
+        <aside class="fs-5 p-3 opacity-50">
+            <h4 class="fs-3 text-center">About SkittyDex</h4>
+            <p class="p-2">
+                SkittyDex is a an app for trainers looking to build their ideal team, 
+                whether it be for battling, contest, aesthetics, or even just pokemon they love. 
+                The goal is for trainers to communicate with others in the community through 
+                finding other trainers to battle and trade in game with. 
+                Currently, SkittyDex is optimized for the Sinnoh Regional pokedex (Pokemon Brilliant Diamond and Shining
+                Pearl) 
+                with future updates to expand post game and to other regions and games.
+            </p>
+        </aside>
+</section>
+<div class="container">
+    <h3 class="fs-3 text-center">Looking to trade or battle in game?</h3>
+    <div class="post">
+        <ul class="post-list">
+            {{#each posts as |post|}}
+            <li>
+                {{> post-info post }}
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+</div>
+</main>

@@ -19,7 +19,7 @@ async function newPostHandler(event) {
     if (response.ok) {
       document.location.replace('/dashboard');
     } else {
-      alert(response.statusText);
+      alert('Failed to post.');
       console.log(response);
     }
   }

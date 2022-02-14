@@ -1,13 +1,22 @@
-const User = require("./User");
-const Post = require("./Post");
-const Comment = require("./Comment");
+const User = require('./User');
+const Post = require('./Post');
+const Comment = require('./Comment');
+const Pokedex = require('./Pokedex');
 
 User.hasMany(Post, {
   foreignKey: "userID",
 });
 
+User.hasMany(Pokedex, {
+    foreignKey: 'userID',
+});
+
 Post.belongsTo(User, {
   foreignKey: "userID",
+});
+
+Pokedex.belongsTo(User, {
+    foreignKey: 'userID'    
 });
 
 Comment.belongsTo(User, {
@@ -34,6 +43,5 @@ Post.hasMany(Comment, {
   hooks: true,
 });
 
-// Insert TEAM INFO
 
-module.exports = { User, Post, Comment };
+module.exports = { User, Post, Comment, Pokedex };

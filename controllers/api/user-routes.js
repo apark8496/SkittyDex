@@ -49,12 +49,6 @@ router.get('/', (req, res) => {
             model: Post,
             attributes: ['title']
           }
-        },
-        {
-          model: Post,
-          attributes: ['title'],
-          through: Vote,
-          as: 'voted_posts'
         }
       ]
     })
