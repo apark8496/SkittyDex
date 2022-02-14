@@ -37,7 +37,6 @@ router.get('/', (req, res) => {
       where: {
         id: req.params.id
       },
-      // TODO: add team info
       include: [
         {
           model: Post,

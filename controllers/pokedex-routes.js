@@ -18,7 +18,7 @@ router.get('/', withAuth, (req, res) => {
       ],
          })
       .then(PokedexData => {
-        const Pokedexs = PokedexData.map(Pokedex => Pokedex.get({ plain: true }));
+        const pokemons = Pokedex.map(Pokedex => Pokedex.get({ plain: true }));
         res.render('Pokedex', { Pokedexs, logged_in: true });
       })
       .catch(err => {
