@@ -1,20 +1,23 @@
 
+// variables
 let i
 let j
-let showSearchError
+
+// load in sprites on page 
 document.addEventListener("DOMContentLoaded", () =>{
     for(i=1; i< 49; i++){
         fetchSprites(i)
-    }
+    };
 
     const spriteContainer = document.getElementById("sprite-container")
-    const backBtn = document.getElementById("back")
-    const forwardBtn = document.getElementById("forward")
+    const backBtn = document.getElementById("back-btn")
+    const forwardBtn = document.getElementById("forward-btn")
 
     if(i===49) {
         backBtn.disabled = true
-    }
+    };
 
+    // view more pokemon
     forwardBtn.addEventListener("click", () => {
         let j = i
         spriteContainer.innerHTML= ""
@@ -27,8 +30,9 @@ document.addEventListener("DOMContentLoaded", () =>{
         if(i>898){
             forwardBtn.disabled = true
         }
-    })
+    });
 
+// view previous pokemon
     backBtn.addEventListener("click", () => {
         let j = i-96
         i=i-48
@@ -42,38 +46,37 @@ document.addEventListener("DOMContentLoaded", () =>{
         if(i<914){
             forwardBtn.disabled = false
         }
-    })
+    });
 
+    // search form
     const form = document.querySelector("form")
     form.addEventListener("submit", e => {
         e.preventDefault()
-        let name = document.getElementById("'mon-name")
-        let number = document.getElementById("dex-number")
+        let name = document.getElementById("'pokemon-name")
+        let number = document.getElementById("pokedex-number")
         getCard(name.value,number.value)
         form.reset()
-    })
+    });
 
-    showSearchError = () => {
-        const error = document.getElementById("modal")
-        error.hidden = false
-        setTimeout(() => error.hidden = true , 2000)
-    }
-})
+});
 
+// fetch pokemon by id through pokeapi
 function fetchSprites(id){
     if(id<=898){    
-        //find way to fetch once for all sprites
         fetch(`https://pokeapi.co/api/v2/pokemon/${id}/`)
         .then(resp => resp.json())
         .then(json => {
+            // pokemon image
             const spriteImg = document.createElement("img")
             spriteImg.src = json.sprites.front_default
+            // allow user to click pokemon and append all sprites
             spriteImg.addEventListener("click", () => renderCard(json))
             document.getElementById("sprite-container").appendChild(spriteImg)
         })
     }
-}
+};
 
+// pokemon user clicked on, bring up on individual card and show information
 function renderCard(data){
     const cardContainer = document.getElementById("card-container")
     cardContainer.innerHTML = ""
@@ -88,7 +91,7 @@ function renderCard(data){
         types.innerText = slots.type.name
         types.id = slots.type.name
         newCard.appendChild(types)
-    }
+    };
 
     const flavorText = document.createElement("p")
 
@@ -98,32 +101,35 @@ function renderCard(data){
         const respText = englishEntries[arrIndex].flavor_text
         flavorText.innerText = respText.replace("\f", " ")
         newCard.appendChild(flavorText)
-    })
+    });
 
+    // obtain more information
     const newText = document.createElement("button")
     newText.innerText = "Obtain More Info"
     newText.addEventListener("click", () => renderCard(data))
 
+    // add to team div
     const teamBtn = document.createElement("button")
     teamBtn.id = "team-btn"
     teamBtn.innerText = "Add to My Team!"
     teamBtn.addEventListener("click", () => {
         addTeamMember(data)
         window.scrollTo(0,0)
-    })
+    });
 
     newCard.appendChild(newText)
     newCard.appendChild(document.createElement("br"))
     newCard.appendChild(document.createElement("br"))
     newCard.appendChild(teamBtn)
     cardContainer.appendChild(newCard)
-}
+};
 
 
 function getFlavorText(textUrl){
     return fetch(`${textUrl}`).then(resp => resp.json())
-}
+};
 
+// ability to see team/remove from team
 function addTeamMember(pokeData){
     const memberSprite = document.createElement("img")
     const removeBtn = document.createElement("button")
@@ -131,12 +137,12 @@ function addTeamMember(pokeData){
     removeBtn.innerText = "Release"
     memberSprite.src = pokeData.sprites.front_default
     memberSprite.alt = pokeData.name
-    const mem1 = document.getElementById("member1")
-    const mem2 = document.getElementById("member2")
-    const mem3 = document.getElementById("member3")
-    const mem4 = document.getElementById("member4")
-    const mem5 = document.getElementById("member5")
-    const mem6 = document.getElementById("member6")
+    const mem1 = document.getElementById("member-1")
+    const mem2 = document.getElementById("member-2")
+    const mem3 = document.getElementById("member-3")
+    const mem4 = document.getElementById("member-4")
+    const mem5 = document.getElementById("member-5")
+    const mem6 = document.getElementById("member-6")
 
         
     switch("") {
@@ -173,18 +179,12 @@ function addTeamMember(pokeData){
         default:
         showTeamError()
     }
-}
+};
 
 function removeSprite(removeBtn){
     removeBtn.parentNode.innerHTML=""
     //https://via.placeholder.com/96x96 consider using this as placeholder to help with styling
-}
-
-function showTeamError() {
-    const error = document.getElementById("modal2")
-    error.hidden = false
-    setTimeout(() => error.hidden = true , 3500)
-}
+};
 
 function getCard(name, number){
     const dexNum = parseInt(number)
@@ -205,4 +205,4 @@ function getCard(name, number){
             showSearchError()
         })
     }
-}
+};

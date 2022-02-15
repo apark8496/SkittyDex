@@ -97,7 +97,8 @@ input:focus {
 .signup-form,
 .login-form,
 .edit-post-form,
-.comment-form {
+.comment-form,
+.search-form {
   border-radius: 20px;
   background-color: #ffdde1;
   margin-top: 3em;
@@ -188,13 +189,20 @@ button {
 /* Pokemon card styles */
 #sprite-container {
   background-image: url(https://i.imgur.com/6EhAM7G.png);
-  background-size: contain;
+  background-size: cover;
   border-radius: 15px;
   padding: 2em;
   margin-bottom: 1em;
+  cursor: pointer;
 }
 
-#dex-number,
-#mon-name {
+#card-container {
+  background-color: #ffdde1;
+  border-radius: 15px;
+  margin-top: 5.4em;
+  margin-left: 1em;
+}
 
+#card-container img {
+  max-width: 100px;
 }

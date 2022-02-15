@@ -1,78 +1,91 @@
-{{!-- Pokedex --}}
 <div class="container">
-  <h3 class="fs-3 m-3">Pok&eacute;dex</h3>
-  <div id="sprite-container"></div>
-  <div id="btn-container">
-    <label for="back"><span>Browse Pok&eacute;mon:</span></label>
-    <button class="btn btn-primary" id="back">&#8592;</button>
-    <button class="btn btn-primary" id="forward">&#8594;</button>
-    <br>
-    <br>
-    <form>
-      <label for="'mon-name"><span>Search by Pok&eacute;mon Name:</span></label>
-      <input name="'mon-name" id="'mon-name" type="text" placeholder="Search by Pok&eacute;mon Name">
-      <br>
-      <label for="dex number"><span>Search by Pok&eacute;dex Number: </span></label>
-      <input type="number" name="dex-number" id="dex-number" placeholder="Search by Pok&eacute;dex Number">
-      <input type="submit" value="Search!"></submit>
+  <div class="row justify-content-around">
+    <div class="col-md-8">
+      <h3 class="fs-3 m-3">P.C. Box: </h3>
+      <div id="sprite-container">
+        {{!-- pokedex --}}
+      </div>
+
+      {{!-- view more/previous pokemon buttons --}}
+      <div id="btn-container">
+        <label for="back"><span>Browse Pok&eacute;mon:</span></label>
+        <button class="btn btn-primary" id="back-btn">&#8592;</button>
+        <button class="btn btn-primary" id="forward-btn">&#8594;</button>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      {{!-- Search Form --}}
+        <form class="search-form p-4">
+          <label for="'pokemon-name"><span>Search by Pok&eacute;mon Name:</span></label>
+          <input name="'pokemon-name" id="'pokemon-name" type="text" placeholder="Search by Pok&eacute;mon Name">
+          <br>
+          <label for="pokedex number"><span>Search by Pok&eacute;dex Number: </span></label>
+          <input type="number" name="pokedex-number" id="pokedex-number" placeholder="Search by Pok&eacute;dex #">
+          <input type="submit" value="Search!"></submit>
+        </form>
+
+      <div class="text-center" id="card-container">
+        {{!-- Pokemon Card Info shows here --}}
+      </div>
+    </div>
+  </div>
+</div>
+
+{{!-- team container --}}
+<div class="container">
+  <div class="team" id="team-container">
+    <h1>My Team</h1>
+    <div id="member-1"></div>
+    <div id="member-2"></div>
+    <div id="member-3"></div>
+    <div id="member-4"></div>
+    <div id="member-5"></div>
+    <div id="member-6"></div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="col" id="new-post">
+    <h2 class="mb-3">Looking to Battle or Trade?</h2>
+
+    <form class="new-post-form">
+      <div class="form-outline mb-4">
+        <label class="form-label" for="post-title">Title</label>
+        <input type="text" id="post-title" name="post-title" class="form-control"
+          placeholder="Looking to trade or battle?" />
+      </div>
+
+      <div class="form-outline mb-4">
+        <label class="form-label" for="post-text">Enter post text here </label>
+        <textarea class="form-control" id="post-text" rows="4"
+          placeholder="I'm looking to see who wants to battle/trade in PBD"></textarea>
+
+      </div>
+
+      <button type="submit" class="button">Post</button>
+
     </form>
   </div>
-  <div class="card text-center" id="card-container"></div>
+</div>
 
-  {{!-- team container --}}
-  <div class="container m-3">
-    <div class="team" id="team-container">
-      <h1>My Team</h1>
-      <div id="member1"></div>
-      <div id="member2"></div>
-      <div id="member3"></div>
-      <div id="member4"></div>
-      <div id="member5"></div>
-      <div id="member6"></div>
-    </div>
-  </div>
+{{!-- Edit Post --}}
+<hr>
 
-  <div class="container">
-    <div class="col" id="new-post">
-      <h2 class="mb-3">Looking to battle or Trade?</h2>
-
-      <form class="new-post-form">
-        <div class="form-outline mb-4">
-          <label class="form-label" for="post-title">Title</label>
-          <input type="text" id="post-title" name="post-title" class="form-control"
-            placeholder="Looking to trade or battle?" />
-        </div>
-
-        <div class="form-outline mb-4">
-          <label class="form-label" for="post-text">Enter post text here </label>
-          <textarea class="form-control" id="post-text" rows="4"
-            placeholder="I'm looking to see who wants to battle/trade in PBD"></textarea>
-
-        </div>
-
-        <button type="submit" class="button">Post</button>
-
-      </form>
-    </div>
-  </div>
-
-  {{!-- Edit Post --}}
-  <hr>
-
-  {{#if posts.length}}
-  <section>
-    <h2>Your Posts</h2>
-    <ul class="list-group">
-      {{#each posts as |post|}}
-      <li class="list-group-item">
-        {{> post-info post}}
-        <a id="edit-post" href="/dashboard/edit/{{post.id}}" class="edit-link"><i class="fas fa-edit"></i> Edit
-          Post</a><br><br>
-      </li>
-      {{/each}}
-    </ul>
-  </section>
-  {{/if}}
+{{#if posts.length}}
+<section>
+  <h2>Your Posts</h2>
+  <ul class="list-group">
+    {{#each posts as |post|}}
+    <li class="list-group-item">
+      {{> post-info post}}
+      <a id="edit-post" href="/dashboard/edit/{{post.id}}" class="edit-link"><i class="fas fa-edit"></i> Edit
+        Post</a><br><br>
+    </li>
+    {{/each}}
+  </ul>
+</section>
+{{/if}}
 </div>
 </div>
 
