@@ -7,16 +7,8 @@ User.hasMany(Post, {
     foreignKey: 'userID'
 });
 
-User.hasMany(Pokedex, {
-    foreignKey: 'userID',
-});
-
 Post.belongsTo(User, {
     foreignKey: 'userID'
-});
-
-Pokedex.belongsTo(User, {
-    foreignKey: 'userID'    
 });
 
 Comment.belongsTo(User, {

@@ -1,112 +1,208 @@
-const { Pokedex } = require("../../models");
 
-// empty array for the trainer's pokemon's id (max of 6 pokemon)
-var chosen = [];
-
-// empty array containing the team picked by user
-var team;
-
-pokemonSelectionHandler();
-
-function pokemonSelectionHandler() {
-    $('.pokemonCard').click(function( ) {
-        var emptySlot = chosen.indexOf(null);
-        
-        if (emptySlot === -1 && chosen.length < 6) {
-
-            chosen.push('span', this).toExponential();
-        }
-        conversionsAndCalculations();
-
-        addPokemon();
-    })
-};
-
-function addPokemon() {
-    for (var i = 0; i < 6; i++) {
-       //Per team member
-       if (chosen[i]) {
-          //Add description and closing icon
-          $(`.chosen:eq(${i}) .description`)
-             .html(`<span>#${team[i].id}</span> ${team[i].name}`)
-             .append("<i class='close icon'></i>");
-          //Add pokemon image
-          $(`.chosen:eq(${i}) img`).attr('src', team[i].image);
-          //Add eventListener to each existing closing icon that will remove said team member when clicked
-          $(`.chosen:eq(${i}) .close.icon`).click(removePokemon.bind(null, i));
- 
-          //Adding type icons
-          $(`.type-one:eq(${i})`).text(teamTypesEntries[i].type1.name);
-          if (teamTypes[i].type2) {
-             $(`.type-two:eq(${i})`).text(teamTypesEntries[i].type2.name);
-          }
-          //Adding super-effective icons
-          $(`.super-effective:eq(${i})`).html('super-effective against <i class="fas fa-fist-raised"></i>');
-          $(`.super-effective-one:eq(${i})`).text(teamTypesEntries[i].type1.superEffective.join(' '));
-          //Adding Not-very-effective icons
-          $(`.not-effective:eq(${i})`).html('not-very-effective against <i class="fas fa-heart-broken"></i>');
-          $(`.not-effective-one:eq(${i})`).text(teamTypesEntries[i].type1.notEffective.join(' '));
-          //Adding No-effect icons
-          $(`.no-effect:eq(${i})`).html('no-effect against<i class="fas fa-skull"></i>');
-          $(`.no-effect-one:eq(${i})`).text(teamTypesEntries[i].type1.noEffect.join(' '));
-          //Same for type 2, if it exists
-          if (teamTypes[i].type2) {
-             $(`.super-effective-two:eq(${i})`).text(teamTypesEntries[i].type2.superEffective.join(' '));
-             $(`.not-effective-two:eq(${i})`).text(teamTypesEntries[i].type2.notEffective.join(' '));
-             $(`.no-effect-two:eq(${i})`).text(teamTypesEntries[i].type2.noEffect.join(' '));
-          }
-          //Additional styling
-          $(`.team:eq(${i}) .segment`).css({ backgroundColor: teamTypesEntries[i].type1.color, border: 'none' });
-          $(`.chosen:eq(${i})`).css('border', 'none');
-          if (teamTypes[i].type2) {
-             $(`.type-two:eq(${i})`)
-                .addClass('type-icon')
-                .css('color', teamTypesEntries[i].type2.color);
-             $(`.team:eq(${i}) .segment`).css({
-                backgroundImage: `linear-gradient(to bottom right, ${teamTypesEntries[i].type1.color},${
-                   teamTypesEntries[i].type2.color
-                })`,
-                border: 'none'
-             });
-          }
-          $(`.type-one:eq(${i})`)
-             .addClass('type-icon')
-             .css('color', teamTypesEntries[i].type1.color);
-          $(`.chosen:eq(${i}) img`).css('margin-top', '0');
-          $(`.chosen:eq(${i}) .description`).css('height', '1.7em');
-       }
+let i
+let j
+let showSearchError
+document.addEventListener("DOMContentLoaded", () =>{
+    for(i=1; i< 49; i++){
+        fetchSprites(i)
     }
- }
 
- function removePokemon(index) {
-    //Remove this pokemon from the chosen array according to the index passed in
-    //Retain the indexes of other remaining team members using null
-    chosen[index] = null;
-    //Update the team's pokemon entries to reflect this removal
-    conversionsAndCalculations();
-    //Remove this team pokemon's closing icon and its eventListener
-    $(`.chosen:eq(${index}) .description .close.icon`).remove();
-    //Remove this team pokemon's name
-    $(`.chosen:eq(${index}) .description`).html('');
-    //Change back this team pokemon's image to the default
-    $(`.chosen:eq(${index}) img`).attr(
-       'src',
-       'https://i.gifer.com/SodH.gif'
-    );
- 
-    //Remove added styling
-    $(`.ui.grid.team-member:eq(${index}) .details`)
-       .find('.type-one,.type-two,h5,p')
-       .text('');
-    $(`.team:eq(${index}) .ui.segment`).css({
-       background: 'none',
-       backgroundColor: 'white',
-       border: '1px solid rgba(34, 36, 38, 0.15)'
-    });
-    $(`.chosen:eq(${index})`).css('border', '2px solid black');
-    $(`.type-one:eq(${index})`).removeClass('type-icon');
-    $(`.type-two:eq(${index})`).removeClass('type-icon');
- 
-    $(`.chosen:eq(${index}) img`).css('margin-top', '1em');
-    $(`.chosen:eq(${index}) .description`).css('height', '1em');
- }
+    const spriteContainer = document.getElementById("sprite-container")
+    const backBtn = document.getElementById("back")
+    const forwardBtn = document.getElementById("forward")
+
+    if(i===49) {
+        backBtn.disabled = true
+    }
+
+    forwardBtn.addEventListener("click", () => {
+        let j = i
+        spriteContainer.innerHTML= ""
+        for(i=i; i<j+48; i++){
+            fetchSprites(i)
+        }
+        if(i!==49){
+            backBtn.disabled = false
+        }
+        if(i>898){
+            forwardBtn.disabled = true
+        }
+    })
+
+    backBtn.addEventListener("click", () => {
+        let j = i-96
+        i=i-48
+        spriteContainer.innerHTML=""
+        for(j=j; j<i; j++){
+            fetchSprites(j)
+        }
+        if(j===49){
+            backBtn.disabled = true
+        }
+        if(i<914){
+            forwardBtn.disabled = false
+        }
+    })
+
+    const form = document.querySelector("form")
+    form.addEventListener("submit", e => {
+        e.preventDefault()
+        let name = document.getElementById("'mon-name")
+        let number = document.getElementById("dex-number")
+        getCard(name.value,number.value)
+        form.reset()
+    })
+
+    showSearchError = () => {
+        const error = document.getElementById("modal")
+        error.hidden = false
+        setTimeout(() => error.hidden = true , 2000)
+    }
+})
+
+function fetchSprites(id){
+    if(id<=898){    
+        //find way to fetch once for all sprites
+        fetch(`https://pokeapi.co/api/v2/pokemon/${id}/`)
+        .then(resp => resp.json())
+        .then(json => {
+            const spriteImg = document.createElement("img")
+            spriteImg.src = json.sprites.front_default
+            spriteImg.addEventListener("click", () => renderCard(json))
+            document.getElementById("sprite-container").appendChild(spriteImg)
+        })
+    }
+}
+
+function renderCard(data){
+    const cardContainer = document.getElementById("card-container")
+    cardContainer.innerHTML = ""
+    const newCard = document.createElement("div")
+    newCard.id = "pokemon-card"
+    newCard.innerHTML = `
+        <h2>${data.name.toUpperCase()}</h2>
+        <img src="${data.sprites.other["official-artwork"].front_default}" alt="${data.name.toUpperCase()}">
+    `
+    for(const slots of data.types){
+        const types = document.createElement("h3")
+        types.innerText = slots.type.name
+        types.id = slots.type.name
+        newCard.appendChild(types)
+    }
+
+    const flavorText = document.createElement("p")
+
+    getFlavorText(data.species.url).then((json) =>{
+        const englishEntries = json.flavor_text_entries.filter(entryObj => entryObj.language.name === "en")
+        arrIndex = Math.floor(Math.random()*englishEntries.length)
+        const respText = englishEntries[arrIndex].flavor_text
+        flavorText.innerText = respText.replace("\f", " ")
+        newCard.appendChild(flavorText)
+    })
+
+    const newText = document.createElement("button")
+    newText.innerText = "Obtain More Info"
+    newText.addEventListener("click", () => renderCard(data))
+
+    const teamBtn = document.createElement("button")
+    teamBtn.id = "team-btn"
+    teamBtn.innerText = "Add to My Team!"
+    teamBtn.addEventListener("click", () => {
+        addTeamMember(data)
+        window.scrollTo(0,0)
+    })
+
+    newCard.appendChild(newText)
+    newCard.appendChild(document.createElement("br"))
+    newCard.appendChild(document.createElement("br"))
+    newCard.appendChild(teamBtn)
+    cardContainer.appendChild(newCard)
+}
+
+
+function getFlavorText(textUrl){
+    return fetch(`${textUrl}`).then(resp => resp.json())
+}
+
+function addTeamMember(pokeData){
+    const memberSprite = document.createElement("img")
+    const removeBtn = document.createElement("button")
+    removeBtn.addEventListener("click", (e) => removeSprite(e.target))
+    removeBtn.innerText = "Release"
+    memberSprite.src = pokeData.sprites.front_default
+    memberSprite.alt = pokeData.name
+    const mem1 = document.getElementById("member1")
+    const mem2 = document.getElementById("member2")
+    const mem3 = document.getElementById("member3")
+    const mem4 = document.getElementById("member4")
+    const mem5 = document.getElementById("member5")
+    const mem6 = document.getElementById("member6")
+
+        
+    switch("") {
+        case mem1.innerHTML:
+            mem1.appendChild(memberSprite)
+            mem1.appendChild(removeBtn)
+            highlightMember(memberSprite)
+            break
+        case mem2.innerHTML:
+            mem2.appendChild(memberSprite)
+            mem2.appendChild(removeBtn)
+            highlightMember(memberSprite)
+            break
+        case mem3.innerHTML:
+            mem3.appendChild(memberSprite)
+            mem3.appendChild(removeBtn)
+            highlightMember(memberSprite)
+            break
+        case mem4.innerHTML:
+            mem4.appendChild(memberSprite)
+            mem4.appendChild(removeBtn)
+            highlightMember(memberSprite)
+            break
+        case mem5.innerHTML:
+            mem5.appendChild(memberSprite)
+            mem5.appendChild(removeBtn)
+            highlightMember(memberSprite)
+            break
+        case mem6.innerHTML:
+            mem6.appendChild(memberSprite)
+            mem6.appendChild(removeBtn)
+            highlightMember(memberSprite)
+            break
+        default:
+        showTeamError()
+    }
+}
+
+function removeSprite(removeBtn){
+    removeBtn.parentNode.innerHTML=""
+    //https://via.placeholder.com/96x96 consider using this as placeholder to help with styling
+}
+
+function showTeamError() {
+    const error = document.getElementById("modal2")
+    error.hidden = false
+    setTimeout(() => error.hidden = true , 3500)
+}
+
+function getCard(name, number){
+    const dexNum = parseInt(number)
+    if(typeof dexNum === "number" && dexNum <= 898) {
+        fetch(`https://pokeapi.co/api/v2/pokemon/${dexNum}/`)
+        .then(resp => resp.json())
+        .then(json => renderCard(json))
+        .catch(()=>{
+            showSearchError()
+        })
+    } else if (typeof name === "string") {
+        fetch(`https://pokeapi.co/api/v2/pokemon/${name.toLowerCase()}/`)
+        .then(resp => resp.json())
+        .then(json=> {
+            renderCard(json)
+        })
+        .catch(()=>{
+            showSearchError()
+        })
+    }
+}

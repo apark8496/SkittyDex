@@ -1,11 +1,11 @@
 const router = require('express').Router();
-const { User, Pokedex } = require('../models');
+const { Pokedex } = require('../models');
 const withAuth = require('../utils/auth');
 
 // get all pokemon from Pokedex
 router.get('/', async (req, res) => {
     try {
-        const pokedexData = await Pokedex.findAll({
+        const dbPokedexData = await Pokedex.findAll({
             include: [
                 {
                     model: Pokedex,
@@ -14,13 +14,13 @@ router.get('/', async (req, res) => {
                         'name',
                         'types',
                         'superEffective',
-                        'notEffective',
+                        'notEffective'
                     ],
                 },
             ],
         });
 
-        const pokemon = pokedexData.map((pokedex) =>
+        const pokemon = dbPokedexData.map((pokedex) =>
             pokedex.get({ plain: true })
         );
         // Send over the 'loggedIn' session variable to the 'homepage' template
@@ -34,31 +34,32 @@ router.get('/', async (req, res) => {
     }
 });
 
-// router.get('/pokedex/:id', async (req, res) => {
-//     try {
-//         const pokedexData = await Pokedex.findByPk(req.params.id, {
-//             include: [
-//                 {
-//                     model: pokedex,
-//                     attributes: [
-//                         'id',
-//                         'name',
-//                         'types',
-//                         'superEffective',
-//                         'notEffective',
-//                     ],
-//                 },
-//             ],
-//         });
+router.get('/pokedex/:id', async (req, res) => {
+    try {
+        const dbPokedexData = await Pokedex.findByPk(req.params.id, {
+            include: [
+                {
+                    model: pokedex,
+                    attributes: [
+                        'id',
+                        'name',
+                        'image',
+                        'types',
+                        'superEffective',
+                        'notEffective',
+                    ],
+                },
+            ],
+        });
 
-//         const pokedex = pokedexData.get({ plain: true });
-//         // Send over the 'loggedIn' session variable to the 'Pokedex' template
-//         res.render('pokedex', { pokedex, loggedIn: req.session.loggedIn });
-//     } catch (err) {
-//         console.log(err);
-//         res.status(500).json(err);
-//     }
-// });
+        const pokedex = dbPokedexData.get({ plain: true });
+        // Send over the 'loggedIn' session variable to the 'Pokedex' template
+        res.render('pokedex', { pokedex, loggedIn: req.session.loggedIn });
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+});
 
 // Login route
 router.get('/login', (req, res) => {

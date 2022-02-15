@@ -1,74 +1,37 @@
+{{!-- Pokedex --}}
 <div class="container">
+  <h3 class="fs-3 m-3">Pok&eacute;dex</h3>
+  <div id="sprite-container"></div>
+  <div id="btn-container">
+    <label for="back"><span>Browse Pok&eacute;mon:</span></label>
+    <button class="btn btn-primary" id="back">&#8592;</button>
+    <button class="btn btn-primary" id="forward">&#8594;</button>
+    <br>
+    <br>
+    <form>
+      <label for="'mon-name"><span>Search by Pok&eacute;mon Name:</span></label>
+      <input name="'mon-name" id="'mon-name" type="text" placeholder="Search by Pok&eacute;mon Name">
+      <br>
+      <label for="dex number"><span>Search by Pok&eacute;dex Number: </span></label>
+      <input type="number" name="dex-number" id="dex-number" placeholder="Search by Pok&eacute;dex Number">
+      <input type="submit" value="Search!"></submit>
+    </form>
+  </div>
+  <div class="card text-center" id="card-container"></div>
 
-  <div class="ui doubling two column grid whole-team">
-    <!-- Create chosen pokemon team members -->
-    <div class="ui column team">
-      <div class="ui segment">
-        <div class="ui grid team-member">
-          <!-- Create chosen pokemon's card -->
-          <div class="member-card center aligned five wide column">
-            <div class="ui card chosen">
-              <div class="image">
-                <img src="https://i.gifer.com/SodH.gif" />
-              </div>
-              <div class="description">
-                <!-- pokemon id and name goes here -->
-              </div>
-            </div>
-          </div>
-          <!-- Create chosen pokemon's type details -->
-          <div class="member-details eleven wide column">
-            <div class="ui grid details">
-              <div class="main two column row">
-                <div class="column">
-                  <div class="type-one"></div>
-                </div>
-                <div class="column">
-                  <div class="type-two"></div>
-                </div>
-              </div>
-              <div class="effect row">
-                <h5 class="header super-effective"></h5>
-                <hr>
-              </div>
-              <div class="two column row">
-                <div class="column">
-                  <p class="super-effective-one"></p>
-                </div>
-                <div class="column">
-                  <p class="super-effective-two"></p>
-                </div>
-              </div>
-              <div class="effect row">
-                <h5 class="header not-effective"></h5>
-                <hr>
-              </div>
-              <div class="two column row">
-                <div class="column">
-                  <p class="not-effective-one"></p>
-                </div>
-                <div class="column">
-                  <p class="not-effective-two"></p>
-                </div>
-              </div>
-              <div class="effect row">
-                <h5 class="header no-effect"></h5>
-                <hr>
-              </div>
-              <div class="two column row">
-                <div class="column">
-                  <p class="no-effect-one"></p>
-                </div>
-                <div class="column">
-                  <p class="no-effect-two"></p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+  {{!-- team container --}}
+  <div class="container m-3">
+    <div class="team" id="team-container">
+      <h1>My Team</h1>
+      <div id="member1"></div>
+      <div id="member2"></div>
+      <div id="member3"></div>
+      <div id="member4"></div>
+      <div id="member5"></div>
+      <div id="member6"></div>
     </div>
   </div>
+
   <div class="container">
     <div class="col" id="new-post">
       <h2 class="mb-3">Looking to battle or Trade?</h2>
@@ -95,6 +58,7 @@
 
   {{!-- Edit Post --}}
   <hr>
+
   {{#if posts.length}}
   <section>
     <h2>Your Posts</h2>

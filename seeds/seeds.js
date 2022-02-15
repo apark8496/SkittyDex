@@ -1,7 +1,7 @@
 const seedUser = require('./userData');
 const seedPost = require('./postData');
 const seedComment = require('./commentData');
-const seedPokedex = require('./pokeDex');
+const seedPokedex = require('./pokedexData');
 
 const sequelize = require('../config/connection');
 

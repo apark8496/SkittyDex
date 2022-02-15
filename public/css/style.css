@@ -85,7 +85,7 @@ aside:hover {
   max-width: 75em;
 }
 
-input[type="text"]:focus {
+input:focus {
   background-color: #E4ABA2;
 }
 
@@ -181,6 +181,20 @@ button {
 
 .button:hover {
   background-position: right center;
-  color: #abbaab;
+  color: #E4ABA2;
   text-decoration: none;
+}
+
+/* Pokemon card styles */
+#sprite-container {
+  background-image: url(https://i.imgur.com/6EhAM7G.png);
+  background-size: contain;
+  border-radius: 15px;
+  padding: 2em;
+  margin-bottom: 1em;
+}
+
+#dex-number,
+#mon-name {
+
 }
