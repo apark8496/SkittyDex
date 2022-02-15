@@ -1,4 +1,3 @@
-
 // variables
 let i
 let j
