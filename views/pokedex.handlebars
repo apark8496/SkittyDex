@@ -1,2 +1,71 @@
-{{!-- sep page for pokedex/team builder --}}
-{{pokemon}}
+<div class="container">
+
+  <div class="ui doubling two column grid whole-team">
+    <!-- Create chosen pokemon team members -->
+    <div class="ui column team">
+      <div class="ui segment">
+        <div class="ui grid team-member">
+          <!-- Create chosen pokemon's card -->
+          <div class="member-card center aligned five wide column">
+            <div class="ui card chosen">
+              <div class="image">
+                <img src="https://i.gifer.com/SodH.gif" />
+              </div>
+              <div class="description">
+                <!-- pokemon id and name goes here -->
+              </div>
+            </div>
+          </div>
+          <!-- Create chosen pokemon's type details -->
+          <div class="member-details eleven wide column">
+            <div class="ui grid details">
+              <div class="main two column row">
+                <div class="column">
+                  <div class="type-one"></div>
+                </div>
+                <div class="column">
+                  <div class="type-two"></div>
+                </div>
+              </div>
+              <div class="effect row">
+                <h5 class="header super-effective"></h5>
+                <hr>
+              </div>
+              <div class="two column row">
+                <div class="column">
+                  <p class="super-effective-one"></p>
+                </div>
+                <div class="column">
+                  <p class="super-effective-two"></p>
+                </div>
+              </div>
+              <div class="effect row">
+                <h5 class="header not-effective"></h5>
+                <hr>
+              </div>
+              <div class="two column row">
+                <div class="column">
+                  <p class="not-effective-one"></p>
+                </div>
+                <div class="column">
+                  <p class="not-effective-two"></p>
+                </div>
+              </div>
+              <div class="effect row">
+                <h5 class="header no-effect"></h5>
+                <hr>
+              </div>
+              <div class="two column row">
+                <div class="column">
+                  <p class="no-effect-one"></p>
+                </div>
+                <div class="column">
+                  <p class="no-effect-two"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

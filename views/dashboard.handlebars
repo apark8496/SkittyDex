@@ -1,60 +1,75 @@
-
-
-{{!-- New Post --}}
 <div class="container">
-  <div class="row align-items-start">
-   <div class="col"> 
-    <h2> Pick Your Squad </h2> 
-    <h3> Chosen</h3>
-    <table id= "pickTeam" >
-      <tbody>
-        <tr>
-          <td> Pokemon 1</td>
-        </tr>
-        <tr>
-          <td> Pokemon 2</td>
-        </tr>
-        <tr>
-          <td> Pokemon 3</td>
-        </tr>
-        <tr>
-          <td> Pokemon 4</td>
-        </tr>
-        <tr>
-          <td> Pokemon 5</td>
-        </tr>
-        <tr>
-          <td> Pokemon 6</td>
-        </tr>
-      </tbody>
-    </table>
-    <h3> Available</h3>
-    <table id= "available" >
-      <tbody>
-        <tr>
-          <td> Image 1</td> 
-          <td> Pokemon 1</td> 
-          <td> Ability 1</td>
-        </tr>
-        <tr>
-          <td> Image 1</td> 
-          <td> Pokemon 1</td> 
-          <td> Ability 1</td>
-        </tr>
-        <tr>
-          <td> Image 1</td> 
-          <td> Pokemon 1</td> 
-          <td> Ability 1</td>
-        </tr>
-        <tr>
-          <td> Image 1</td> 
-          <td> Pokemon 1</td> 
-          <td> Ability 1</td>
-        </tr>
-        
-      </tbody>
-    </table>
-   </div>
+
+  <div class="ui doubling two column grid whole-team">
+    <!-- Create chosen pokemon team members -->
+    <div class="ui column team">
+      <div class="ui segment">
+        <div class="ui grid team-member">
+          <!-- Create chosen pokemon's card -->
+          <div class="member-card center aligned five wide column">
+            <div class="ui card chosen">
+              <div class="image">
+                <img src="https://i.gifer.com/SodH.gif" />
+              </div>
+              <div class="description">
+                <!-- pokemon id and name goes here -->
+              </div>
+            </div>
+          </div>
+          <!-- Create chosen pokemon's type details -->
+          <div class="member-details eleven wide column">
+            <div class="ui grid details">
+              <div class="main two column row">
+                <div class="column">
+                  <div class="type-one"></div>
+                </div>
+                <div class="column">
+                  <div class="type-two"></div>
+                </div>
+              </div>
+              <div class="effect row">
+                <h5 class="header super-effective"></h5>
+                <hr>
+              </div>
+              <div class="two column row">
+                <div class="column">
+                  <p class="super-effective-one"></p>
+                </div>
+                <div class="column">
+                  <p class="super-effective-two"></p>
+                </div>
+              </div>
+              <div class="effect row">
+                <h5 class="header not-effective"></h5>
+                <hr>
+              </div>
+              <div class="two column row">
+                <div class="column">
+                  <p class="not-effective-one"></p>
+                </div>
+                <div class="column">
+                  <p class="not-effective-two"></p>
+                </div>
+              </div>
+              <div class="effect row">
+                <h5 class="header no-effect"></h5>
+                <hr>
+              </div>
+              <div class="two column row">
+                <div class="column">
+                  <p class="no-effect-one"></p>
+                </div>
+                <div class="column">
+                  <p class="no-effect-two"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
     <div class="col" id="new-post">
       <h2 class="mb-3">Looking to battle or Trade?</h2>
 
@@ -78,7 +93,7 @@
     </div>
   </div>
 
-{{!-- Edit Post --}}
+  {{!-- Edit Post --}}
   <hr>
   {{#if posts.length}}
   <section>
@@ -95,5 +110,7 @@
   </section>
   {{/if}}
 </div>
+</div>
 
 <script src="/js/newPost.js"></script>
+<script src="/js/teamBuilder.js"></script>
