@@ -11,14 +11,14 @@ document.addEventListener("DOMContentLoaded", () =>{
 
     const spriteContainer = document.getElementById("sprite-container")
     const backBtn = document.getElementById("back-btn")
-    const forwardBtn = document.getElementById("forward-btn")
+    const nextBtn = document.getElementById("next-btn")
 
     if(i===49) {
         backBtn.disabled = true
     };
 
     // view more pokemon
-    forwardBtn.addEventListener("click", () => {
+    nextBtn.addEventListener("click", () => {
         let j = i
         spriteContainer.innerHTML= ""
         for(i=i; i<j+48; i++){
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () =>{
             backBtn.disabled = false
         }
         if(i>898){
-            forwardBtn.disabled = true
+            nextBtn.disabled = true
         }
     });
 
@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () =>{
             backBtn.disabled = true
         }
         if(i<914){
-            forwardBtn.disabled = false
+            nextBtn.disabled = false
         }
     });
 
@@ -82,6 +82,7 @@ function renderCard(data){
     cardContainer.innerHTML = ""
     const newCard = document.createElement("div")
     newCard.id = "pokemon-card"
+    newCard.className = "p-2"
     newCard.innerHTML = `
         <h2>${data.name.toUpperCase()}</h2>
         <img src="${data.sprites.other["official-artwork"].front_default}" alt="${data.name.toUpperCase()}">
@@ -106,11 +107,13 @@ function renderCard(data){
     // obtain more information
     const newText = document.createElement("button")
     newText.innerText = "Obtain More Info"
+    newText.className = "btn btn-primary"
     newText.addEventListener("click", () => renderCard(data))
 
     // add to team div
     const teamBtn = document.createElement("button")
     teamBtn.id = "team-btn"
+    teamBtn.className = "btn btn-primary mb-3"
     teamBtn.innerText = "Add to My Team!"
     teamBtn.addEventListener("click", () => {
         addTeamMember(data)
@@ -135,6 +138,7 @@ function addTeamMember(pokeData){
     const removeBtn = document.createElement("button")
     removeBtn.addEventListener("click", (e) => removeSprite(e.target))
     removeBtn.innerText = "Release"
+    removeBtn.className = "btn btn-primary"
     memberSprite.src = pokeData.sprites.front_default
     memberSprite.alt = pokeData.name
     const mem1 = document.getElementById("member-1")

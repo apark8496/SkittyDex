@@ -129,7 +129,7 @@ input:focus {
 .card {
   margin: 2em;
   border-radius: 10px;
-  background-color: #ffdde1;
+  background-color: #bebebe81;
   border-color: #000000;
   opacity: 75%;
 }
@@ -167,11 +167,9 @@ button {
   margin-left: 2em;
 }
 
-.button {
-  background-image: linear-gradient(to right, #ECE9E6 0%, #FFFFFF  51%, #ECE9E6  100%);
-}
 
 .button {
+  background-image: linear-gradient(to right, #1FA2FF 0%, #12D8FA  51%, #1FA2FF  100%);
   text-align: center;
   transition: 0.5s;
   background-size: 00% auto;
@@ -197,7 +195,7 @@ button {
 }
 
 #card-container {
-  background-color: #ffdde1;
+  background-color: #bebebe81;
   border-radius: 15px;
   margin-top: 5.4em;
   margin-left: 1em;
