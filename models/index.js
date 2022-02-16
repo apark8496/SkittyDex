@@ -29,6 +29,12 @@ User.hasMany(Comment, {
     hooks:true
 });
 
+// User.hasMany(Teams, {
+//     foreignKey: 'userID',
+//     onDelete: 'cascade',
+//     hooks:true
+// });
+
 Post.hasMany(Comment, {
     foreignKey: 'postID',
     onDelete: 'cascade',

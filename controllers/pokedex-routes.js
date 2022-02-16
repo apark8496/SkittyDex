@@ -3,7 +3,7 @@ const { Pokedex } = require('../models');
 const withAuth = require('../utils/auth');
 
 // get all pokemon from Pokedex
-router.get('/', async (req, res) => {
+router.get('/', withAuth, (req, res) => {
     try {
         const dbPokedexData = await Pokedex.findAll({            
         });

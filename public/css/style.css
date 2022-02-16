@@ -28,13 +28,14 @@ header {
   cursor: pointer;
 }
 
-.navbar-brand a:hover {
+/* .navbar-brand a:hover {
   color: #a66e8a;
-}
+} */
 
 #logo {
   width: 9%;
   height: 9%;
+  margin-left: -.5em;
 }
 
 .nav-item a {
@@ -97,14 +98,23 @@ input:focus {
 .signup-form,
 .login-form,
 .edit-post-form,
-.comment-form,
-.search-form {
+.comment-form {
   border-radius: 20px;
-  background-color: #ffdde1;
+  background-color: #a66e8a;
   margin-top: 3em;
   padding: 20px;
   opacity: 75%;
 }
+
+.search-form {
+  border-radius: 20px;
+  background-color: #a66e8a;
+  margin-top: 3em;
+  padding: 20px;
+  opacity: 75%;
+  font-weight: 600;
+}
+
 
 /* post/comment style */
 .post-list {
@@ -190,6 +200,10 @@ button {
 }
 
 /* Pokemon card styles */
+#pokedex-logo{
+  width: 8em;
+}
+
 #sprite-container {
   background-image: url(https://i.imgur.com/6EhAM7G.png);
   background-size: cover;
@@ -198,8 +212,11 @@ button {
   margin-bottom: 1em;
   cursor: pointer;
 }
+#team-container {
+width: 400px;
+}
 
-#card-container {
+#card-container, #team-container {
   background-color: #bebebe81;
   border-radius: 15px;
   margin-top: 5.4em;
