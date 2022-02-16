@@ -1,6 +1,6 @@
 // variables
-let i
-let j
+let i;
+let j;
 
 // load in sprites on page 
 document.addEventListener("DOMContentLoaded", () => {
@@ -8,9 +8,9 @@ document.addEventListener("DOMContentLoaded", () => {
         fetchPokemon(i)
     };
 
-    const spriteContainer = document.getElementById("sprite-container")
-    const backBtn = document.getElementById("back-btn")
-    const nextBtn = document.getElementById("next-btn")
+    const spriteContainer = document.getElementById("sprite-container");
+    const backBtn = document.getElementById("back-btn");
+    const nextBtn = document.getElementById("next-btn");
 
     if (i === 49) {
         backBtn.disabled = true
