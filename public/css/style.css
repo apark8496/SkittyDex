@@ -121,8 +121,9 @@ input:focus {
 }
 
 .list-group-item {
-  background-color: #ffdde1;
+  /* background-color: #ffdde1; */
   margin: 1em;
+  border-style: none;
   border-radius: 20px;
 }
 

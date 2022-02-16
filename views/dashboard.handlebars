@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="col" id="new-post">
+  <div id="new-post">
     <h2 class="mb-3">Looking to Battle or Trade?</h2>
 
     <form class="new-post-form">
@@ -26,9 +26,9 @@
 <hr>
 
 {{#if posts.length}}
-<section>
-  <h2>Your Posts</h2>
+<section class="container">
   <ul class="list-group">
+        <h2>Your Posts</h2>
     {{#each posts as |post|}}
     <li class="list-group-item">
       {{> post-info post}}
