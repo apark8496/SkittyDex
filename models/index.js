@@ -29,6 +29,9 @@ User.hasMany(Comment, {
     hooks:true
 });
 
+Pokedex.belongsTo(User, {
+    foreignKey: 'userID'
+})
 // User.hasMany(Teams, {
 //     foreignKey: 'userID',
 //     onDelete: 'cascade',
