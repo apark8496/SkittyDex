@@ -7,9 +7,10 @@ function addPoke(id){
 
 }
 function removePoke(id){
-    if
+    if 
 
 }
+
 function checkSix(){
     if (chosen.length<= 5){
         return true;
