@@ -24,8 +24,8 @@ const seedAll = async () => {
   const comments = await Comment.bulkCreate(commentData);
   console.log('\n----- COMMENTS SEEDED -----\n');
 
-  // const pokemon = await Comment.bulkCreate(pokedexData);
-  // console.log('\n----- POKEMON SEEDED -----\n');
+  const pokemon = await Comment.bulkCreate(pokedexData);
+  console.log('\n----- POKEMON SEEDED -----\n');
 
   process.exit(0);
 };
