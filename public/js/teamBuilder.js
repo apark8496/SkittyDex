@@ -5,7 +5,7 @@ let j
 // load in sprites on page 
 document.addEventListener("DOMContentLoaded", () => {
     for (i = 1; i < 49; i++) {
-        fetchSprites(i)
+        fetchPokemon(i)
     };
 
     const spriteContainer = document.getElementById("sprite-container")
@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let j = i
         spriteContainer.innerHTML = ""
         for (i = i; i < j + 48; i++) {
-            fetchSprites(i)
+            fetchPokemon(i)
         }
         if (i !== 49) {
             backBtn.disabled = false
@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
         i = i - 48
         spriteContainer.innerHTML = ""
         for (j = j; j < i; j++) {
-            fetchSprites(j)
+            fetchPokemon(j)
         }
         if (j === 49) {
             backBtn.disabled = true
@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // fetch pokemon by id through pokeapi
-function fetchSprites(id) {
+function fetchPokemon(id) {
     if (id <= 898) {
         fetch(`https://pokeapi.co/api/v2/pokemon/${id}/`)
             .then(resp => resp.json())
@@ -87,7 +87,7 @@ function renderCard(data) {
         <img src="${data.sprites.other["official-artwork"].front_default}" alt="${data.name.toUpperCase()}">
     `
     for (const slots of data.types) {
-        const types = document.createElement("h3")
+        const types = document.createElement("p")
         types.innerText = slots.type.name
         types.id = slots.type.name
         newCard.appendChild(types)
@@ -113,12 +113,13 @@ function renderCard(data) {
     const teamBtn = document.createElement("button")
     teamBtn.id = "team-btn"
     teamBtn.className = "btn btn-primary mb-3"
-    teamBtn.innerText = "Add to My Team!"
+    teamBtn.innerText = "Add to Team"
     teamBtn.addEventListener("click", () => {
         addTeamMember(data)
         window.scrollTo(0, 0)
     });
 
+    // append buttons
     newCard.appendChild(newText)
     newCard.appendChild(document.createElement("br"))
     newCard.appendChild(document.createElement("br"))
@@ -186,7 +187,6 @@ function addTeamMember(pokeData) {
 
 function removeSprite(removeBtn) {
     removeBtn.parentNode.innerHTML = ""
-    //https://via.placeholder.com/96x96 consider using this as placeholder to help with styling
 };
 
 function getCard(name, number) {
