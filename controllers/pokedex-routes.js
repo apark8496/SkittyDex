@@ -5,24 +5,13 @@ const withAuth = require('../utils/auth');
 // get all pokemon from Pokedex
 router.get('/', async (req, res) => {
     try {
-        const dbPokedexData = await Pokedex.findAll({
-            include: [
-                {
-                    model: Pokedex,
-                    attributes: [
-                        'id',
-                        'name',
-                        'types',
-                        'superEffective',
-                        'notEffective'
-                    ],
-                },
-            ],
+        const dbPokedexData = await Pokedex.findAll({            
         });
 
         const pokemon = dbPokedexData.map((pokedex) =>
-            pokedex.get({ plain: true })
+            pokedex.get({ plain: true })            
         );
+        console.log(pokemon);
         // Send over the 'loggedIn' session variable to the 'homepage' template
         res.render('pokedex', {
             pokemon,
@@ -34,22 +23,9 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.get('/pokedex/:id', async (req, res) => {
+router.get('/:id', async (req, res) => {
     try {
         const dbPokedexData = await Pokedex.findByPk(req.params.id, {
-            include: [
-                {
-                    model: pokedex,
-                    attributes: [
-                        'id',
-                        'name',
-                        'image',
-                        'types',
-                        'superEffective',
-                        'notEffective',
-                    ],
-                },
-            ],
         });
 
         const pokedex = dbPokedexData.get({ plain: true });
