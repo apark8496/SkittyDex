@@ -1,71 +1,48 @@
 <div class="container">
+  <div class="row justify-content-around">
+    <div class="col-md-8">
+      <h3 class="fs-3 m-3">P.C. Box: </h3>
+      <div id="sprite-container">
+        {{!-- pokedex --}}
+      </div>
 
-  <div class="ui doubling two column grid whole-team">
-    <!-- Create chosen pokemon team members -->
-    <div class="ui column team">
-      <div class="ui segment">
-        <div class="ui grid team-member">
-          <!-- Create chosen pokemon's card -->
-          <div class="member-card center aligned five wide column">
-            <div class="ui card chosen">
-              <div class="image">
-                <img src="https://i.gifer.com/SodH.gif" />
-              </div>
-              <div class="description">
-                <!-- pokemon id and name goes here -->
-              </div>
-            </div>
-          </div>
-          <!-- Create chosen pokemon's type details -->
-          <div class="member-details eleven wide column">
-            <div class="ui grid details">
-              <div class="main two column row">
-                <div class="column">
-                  <div class="type-one"></div>
-                </div>
-                <div class="column">
-                  <div class="type-two"></div>
-                </div>
-              </div>
-              <div class="effect row">
-                <h5 class="header super-effective"></h5>
-                <hr>
-              </div>
-              <div class="two column row">
-                <div class="column">
-                  <p class="super-effective-one"></p>
-                </div>
-                <div class="column">
-                  <p class="super-effective-two"></p>
-                </div>
-              </div>
-              <div class="effect row">
-                <h5 class="header not-effective"></h5>
-                <hr>
-              </div>
-              <div class="two column row">
-                <div class="column">
-                  <p class="not-effective-one"></p>
-                </div>
-                <div class="column">
-                  <p class="not-effective-two"></p>
-                </div>
-              </div>
-              <div class="effect row">
-                <h5 class="header no-effect"></h5>
-                <hr>
-              </div>
-              <div class="two column row">
-                <div class="column">
-                  <p class="no-effect-one"></p>
-                </div>
-                <div class="column">
-                  <p class="no-effect-two"></p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+      {{!-- view more/previous pokemon buttons --}}
+      <div id="btn-container">
+        <label for="back"><span>Browse Pok&eacute;mon:</span></label>
+        <button class="btn btn-primary" id="back-btn">&#8592;</button>
+        <button class="btn btn-primary" id="next-btn">&#8594;</button>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      {{!-- Search Form --}}
+        <form class="search-form p-4">
+          <label for="'pokemon-name"><span>Search by Pok&eacute;mon Name:</span></label>
+          <input name="'pokemon-name" id="'pokemon-name" type="text" placeholder="Search by Pok&eacute;mon Name">
+          <br>
+          <label for="pokedex number"><span>Search by Pok&eacute;dex Number: </span></label>
+          <input type="number" name="pokedex-number" id="pokedex-number" placeholder="Search by Pok&eacute;dex #">
+          <input class="btn btn-primary" type="submit" value="Search!"></submit>
+        </form>
+
+      <div class="text-center" id="card-container">
+        {{!-- Pokemon Card Info shows here --}}
       </div>
     </div>
   </div>
+</div>
+
+{{!-- team container --}}
+<div class="container">
+  <div class="team" id="team-container">
+    <h1>My Team</h1>
+    <div id="member-1"></div>
+    <div id="member-2"></div>
+    <div id="member-3"></div>
+    <div id="member-4"></div>
+    <div id="member-5"></div>
+    <div id="member-6"></div>
+  </div>
+</div>
+
+<script src="/js/teamBuilder.js"></script>
