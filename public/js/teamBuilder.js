@@ -66,11 +66,11 @@ function fetchPokemon(id) {
             .then(resp => resp.json())
             .then(json => {
                 // pokemon image
-                const spriteImg = document.createElement("img")
-                spriteImg.src = json.sprites.front_default
+                const pokemonImage = document.createElement("img")
+                pokemonImage.src = json.sprites.front_default
                 // allow user to click pokemon and append all sprites
-                spriteImg.addEventListener("click", () => renderCard(json))
-                document.getElementById("sprite-container").appendChild(spriteImg)
+                pokemonImage.addEventListener("click", () => renderCard(json))
+                document.getElementById("sprite-container").appendChild(pokemonImage)
             })
     }
 };
@@ -86,6 +86,7 @@ function renderCard(data) {
         <h2>${data.name.toUpperCase()}</h2>
         <img src="${data.sprites.other["official-artwork"].front_default}" alt="${data.name.toUpperCase()}">
     `
+    // types
     for (const slots of data.types) {
         const types = document.createElement("p")
         types.innerText = slots.type.name
@@ -93,14 +94,17 @@ function renderCard(data) {
         newCard.appendChild(types)
     };
 
-    const flavorText = document.createElement("p")
+    // Get Damage Relations 
+    
+    // Description
+    const description = document.createElement("p")
 
-    getFlavorText(data.species.url).then((json) => {
+    getDescription(data.species.url).then((json) => {
         const englishEntries = json.flavor_text_entries.filter(entryObj => entryObj.language.name === "en")
         arrIndex = Math.floor(Math.random() * englishEntries.length)
         const respText = englishEntries[arrIndex].flavor_text
-        flavorText.innerText = respText.replace("\f", " ")
-        newCard.appendChild(flavorText)
+        description.innerText = respText.replace("\f", " ")
+        newCard.appendChild(description)
     });
 
     // obtain more information
@@ -128,7 +132,7 @@ function renderCard(data) {
 };
 
 
-function getFlavorText(textUrl) {
+function getDescription(textUrl) {
     return fetch(`${textUrl}`).then(resp => resp.json())
 };
 
@@ -210,7 +214,7 @@ function getCard(name, number) {
     }
 };
 
-// save team function
+// TODO:save team function (BRUCE)
 
 
-// post team to homepage
+// TODO:post team to homepage (BRUCE)
