@@ -2,12 +2,19 @@ const User = require('./User');
 const Post = require('./Post');
 const Comment = require('./Comment');
 const Pokedex = require('./Pokedex');
+const Poke = require('./Poke');
+const Team = require('./Team');
+
 
 User.hasMany(Post, {
     foreignKey: 'userID'
 });
 
 Post.belongsTo(User, {
+    foreignKey: 'userID'
+});
+
+Team.belongsTo(User, {
     foreignKey: 'userID'
 });
 
@@ -25,6 +32,11 @@ Comment.belongsTo(Post, {
 
 User.hasMany(Comment, {
     foreignKey: 'userID',
+    onDelete: 'cascade',
+    hooks:true
+});
+Poke.hasMany(Team, {
+    foreignKey: 'pokeID',
     onDelete: 'cascade',
     hooks:true
 });

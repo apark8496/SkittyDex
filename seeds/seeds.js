@@ -2,6 +2,8 @@ const seedUser = require('./userData');
 const seedPost = require('./postData');
 const seedComment = require('./commentData');
 const seedPokedex = require('./pokedexData');
+const seedPoke = require('./pokeData');
+const seedTeam = require('./teamData');
 
 const sequelize = require('../config/connection');
 
@@ -21,6 +23,14 @@ const seedAll = async () => {
 
   await seedPokedex();
   console.log('\n----- Pokedex SEEDED -----\n');
+
+  await seedPoke();
+  console.log('\n----- Poke SEEDED -----\n');
+
+  await seedTeam();
+  console.log('\n----- Team SEEDED -----\n');
+
+
 
   process.exit(0);
 };

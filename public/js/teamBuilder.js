@@ -1,6 +1,7 @@
 // variables
 let i
 let j
+var chosen = [];
 
 // load in sprites on page 
 document.addEventListener("DOMContentLoaded", () => {
@@ -211,6 +212,11 @@ function getCard(name, number) {
 };
 
 // save team function
+function saveTeam(){
+   console.log("saving team"); 
+
+}
+
 
 
 // post team to homepage
