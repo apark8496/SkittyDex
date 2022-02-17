@@ -1,7 +1,7 @@
-const User = require('./User.js');
-const Post = require('./Post.js');
-const Comment = require('./Comment.js');
-const Pokedex = require('./Pokedex.js');
+const User = require('./User');
+const Post = require('./Post');
+const Comment = require('./Comment');
+const Pokedex = require('./Pokedex');
 
 User.hasMany(Post, {
     foreignKey: 'userID'
@@ -29,17 +29,10 @@ User.hasMany(Comment, {
     hooks:true
 });
 
-// User.hasMany(Teams, {
-//     foreignKey: 'userID',
-//     onDelete: 'cascade',
-//     hooks:true
-// });
-
 Post.hasMany(Comment, {
     foreignKey: 'postID',
     onDelete: 'cascade',
     hooks:true
 })
-
 
 module.exports = { User, Post, Comment, Pokedex };
