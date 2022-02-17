@@ -76,10 +76,18 @@ aside:hover {
   color: #ffdde1;
 }
 
+#qrcode {
+  width: 20em;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+
 /* login style */
 .input-group {
   margin: 2em;
   width: auto;
+  display: block;
 }
 
 #pokemon-name,
