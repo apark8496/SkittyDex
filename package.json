@@ -27,10 +27,8 @@
   "author": "",
   "license": "ISC",
   "homepage": "https://github.com/adunderwood96/SkittyDex#readme",
-  "devDependencies": {
-    "nodemon": "^2.0.15"
-  },
   "bugs": {
     "url": "https://github.com/adunderwood96/SkittyDex/issues"
-  }
+  },
+  "devDependencies": {}
 }
