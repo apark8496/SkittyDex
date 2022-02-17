@@ -1,7 +1,8 @@
 <div class="container">
   <div class="row justify-content-around">
     <div class="col-md-8">
-      <h3 class="fs-3 text-center mt-3"><img id="pokedex-logo" src="https://i.imgur.com/ExrYRu4.png" border="0" alt="pokedex"></h3>
+      <h3 class="fs-3 text-center mt-3"><img id="pokedex-logo" src="https://i.imgur.com/ExrYRu4.png" border="0"
+          alt="pokedex"></h3>
       <div id="sprite-container">
         {{!-- pokedex --}}
       </div>
@@ -16,15 +17,15 @@
 
     <div class="col-md-4">
       {{!-- Search Form --}}
-        <form class="search-form p-3">
-          <h3><img src="https://i.imgur.com/Nwy9oMM.png" border="0" alt="Search:"></h3>
-          <label for="'pokemon-name"><span>Search by Pok&eacute;mon Name:</span></label>
-          <input name="'pokemon-name" id="'pokemon-name" type="text" placeholder="Search by Pok&eacute;mon Name">
-          <br>
-          <label for="pokedex number"><span>Search by Pok&eacute;dex Number: </span></label>
-          <input type="number" name="pokedex-number" id="pokedex-number" placeholder="Search by Pok&eacute;dex #">
-          <input class="btn btn-primary" type="submit" value="Search!"></submit>
-        </form>
+      <form class="search-form p-3">
+        <h3><img src="https://i.imgur.com/Nwy9oMM.png" border="0" alt="Search:"></h3>
+        <label for="'pokemon-name"><span>Search by Pok&eacute;mon Name:</span></label>
+        <input name="'pokemon-name" id="'pokemon-name" type="text" placeholder="Search by Pok&eacute;mon Name">
+        <br>
+        <label for="pokedex-number"><span>Search by Pok&eacute;dex Number: </span></label>
+        <input type="number" name="pokedex-number" id="pokedex-number" placeholder="Search by Pok&eacute;dex #">
+        <input class="btn btn-primary" type="submit" value="Search!"></submit>
+      </form>
 
       <div class="text-center" id="card-container">
         {{!-- Pokemon Card Info shows here --}}
@@ -32,17 +33,20 @@
     </div>
   </div>
 </div>
-      {{!-- team container --}}
+{{!-- team container --}}
 <div class="container text-center">
-  <div class="team" id="team-container">
+  <form class="new-team-form" id="team-container">
     <h3><img src="https://i.imgur.com/VeIWVdq.png" border="0" alt="Team"></h3>
+    <input type="text" id="post-title" name="team-name" class="form-control" placeholder="Team Name" />
     <div id="member-1"></div>
     <div id="member-2"></div>
     <div id="member-3"></div>
     <div id="member-4"></div>
     <div id="member-5"></div>
     <div id="member-6"></div>
-  </div>
+    <button class="btn btn-primary" type="submit" id="save-btn"> Save Team</button>
+  </form>
 </div>
+
 
 <script src="/js/teamBuilder.js"></script>

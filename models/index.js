@@ -3,6 +3,7 @@ const Post = require('./Post');
 const Comment = require('./Comment');
 const Pokedex = require('./Pokedex');
 
+
 // create associations
 User.hasMany(Post, {
     foreignKey: 'userID'

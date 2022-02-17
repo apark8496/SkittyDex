@@ -26,6 +26,7 @@ const seedAll = async () => {
 
   const pokemon = await Pokedex.bulkCreate(pokedexData);
   console.log('\n----- POKEMON SEEDED -----\n');
+ 
 
   process.exit(0);
 };

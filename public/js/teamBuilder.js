@@ -211,7 +211,7 @@ function getCard(name, number) {
     }
 };
 
-// TODO:save team function (BRUCE)
+
 
 
 // TODO:post team to homepage (BRUCE)
