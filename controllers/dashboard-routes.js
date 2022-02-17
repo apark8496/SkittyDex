@@ -4,40 +4,40 @@ const { Post, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, (req, res) => {
-    Post.findAll({
-      where: {
-        userID: req.session.user_id
-      },
-      attributes: [
-        'id',
-        'post',
-        'title',
-        'created_at',
-      ],
-      include: [
-        {
-          model: Comment,
-          attributes: ['id', 'comment', 'postID', 'userID', 'created_at'],
-          include: {
-            model: User,
-            attributes: ['username']
-          }
-        },
-        {
+  Post.findAll({
+    where: {
+      userID: req.session.user_id
+    },
+    attributes: [
+      'id',
+      'post',
+      'title',
+      'created_at',
+    ],
+    include: [
+      {
+        model: Comment,
+        attributes: ['id', 'comment', 'postID', 'userID', 'created_at'],
+        include: {
           model: User,
           attributes: ['username']
         }
-      ]
+      },
+      {
+        model: User,
+        attributes: ['username']
+      }
+    ]
+  })
+    .then(postData => {
+      const posts = postData.map(post => post.get({ plain: true }));
+      res.render('dashboard', { posts, logged_in: true });
     })
-      .then(postData => {
-        const posts = postData.map(post => post.get({ plain: true }));
-        res.render('dashboard', { posts, logged_in: true });
-      })
-      .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-      });
-  });
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
 
 router.get('/edit/:id', withAuth, (req, res) => {
   Post.findOne({

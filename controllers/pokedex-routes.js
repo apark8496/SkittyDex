@@ -1,5 +1,4 @@
 const router = require('express').Router();
-const sequelize = require('../config/connection');
 const { Pokedex } = require('../models');
 const withAuth = require('../utils/auth');
 
@@ -16,7 +15,8 @@ router.get('/', withAuth, async (req, res) => {
         // Send over the 'loggedIn' session variable to the 'homepage' template
         res.render('pokedex', {
             pokemon,
-            logged_in: true,        });
+            logged_in: true,
+        });
     } catch (err) {
         console.log(err);
         res.status(500).json(err);

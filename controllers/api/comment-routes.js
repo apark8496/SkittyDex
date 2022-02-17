@@ -3,19 +3,19 @@ const { Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.get('/', async (req, res) => {
-    try{
+    try {
         const commentData = await Comment.findAll();
         res.json(commentData);
     }
-    catch(err){
+    catch (err) {
         res.status(500).json(err);
     }
-    
-  });
+
+});
 
 router.post('/', withAuth, async (req, res) => {
-    try{
-        if(req.session){
+    try {
+        if (req.session) {
             const commentData = await Comment.create({
                 comment: req.body.comment,
                 postID: req.body.postID,
@@ -24,25 +24,25 @@ router.post('/', withAuth, async (req, res) => {
             res.json(commentData);
         }
     }
-    catch(err){
+    catch (err) {
         res.status(400).json(err);
     }
 });
 
 router.delete('/:id', withAuth, async (req, res) => {
-    try{
+    try {
         const commentData = await Comment.destroy({
             where: {
-              id: req.params.id
+                id: req.params.id
             }
-          });
+        });
 
         if (!commentData) {
             res.status(404).json({ message: 'No comment found with this id' });
             return;
         }
     }
-    catch(err){
+    catch (err) {
         res.status(500).json(err);
     }
 });
