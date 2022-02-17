@@ -36,7 +36,7 @@ Pokedex.init(
         sequelize,
         freezeTableName: true,
         underscored: true,
-        modelName: 'pokedex',
+        modelName: 'pokedex'
     }
 );
 

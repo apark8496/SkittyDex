@@ -21,11 +21,14 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "git+https://github.com/adunderwood96/SkittyDex.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "homepage": "",
+  "homepage": "https://github.com/adunderwood96/SkittyDex#readme",
+  "bugs": {
+    "url": "https://github.com/adunderwood96/SkittyDex/issues"
+  },
   "devDependencies": {}
 }

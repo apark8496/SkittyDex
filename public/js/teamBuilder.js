@@ -1,6 +1,6 @@
 // variables
-let i;
-let j;
+let i
+let j
 
 // load in sprites on page 
 document.addEventListener("DOMContentLoaded", () => {
@@ -8,9 +8,9 @@ document.addEventListener("DOMContentLoaded", () => {
         fetchPokemon(i)
     };
 
-    const spriteContainer = document.getElementById("sprite-container");
-    const backBtn = document.getElementById("back-btn");
-    const nextBtn = document.getElementById("next-btn");
+    const spriteContainer = document.getElementById("sprite-container")
+    const backBtn = document.getElementById("back-btn")
+    const nextBtn = document.getElementById("next-btn")
 
     if (i === 49) {
         backBtn.disabled = true
@@ -66,11 +66,11 @@ function fetchPokemon(id) {
             .then(resp => resp.json())
             .then(json => {
                 // pokemon image
-                const pokemonImage = document.createElement("img")
-                pokemonImage.src = json.sprites.front_default
+                const spriteImg = document.createElement("img")
+                spriteImg.src = json.sprites.front_default
                 // allow user to click pokemon and append all sprites
-                pokemonImage.addEventListener("click", () => renderCard(json))
-                document.getElementById("sprite-container").appendChild(pokemonImage)
+                spriteImg.addEventListener("click", () => renderCard(json))
+                document.getElementById("sprite-container").appendChild(spriteImg)
             })
     }
 };
@@ -86,7 +86,6 @@ function renderCard(data) {
         <h2>${data.name.toUpperCase()}</h2>
         <img src="${data.sprites.other["official-artwork"].front_default}" alt="${data.name.toUpperCase()}">
     `
-    // types
     for (const slots of data.types) {
         const types = document.createElement("p")
         types.innerText = slots.type.name
@@ -94,17 +93,14 @@ function renderCard(data) {
         newCard.appendChild(types)
     };
 
-    // Get Damage Relations 
-    
-    // Description
-    const description = document.createElement("p")
+    const flavorText = document.createElement("p")
 
-    getDescription(data.species.url).then((json) => {
+    getFlavorText(data.species.url).then((json) => {
         const englishEntries = json.flavor_text_entries.filter(entryObj => entryObj.language.name === "en")
         arrIndex = Math.floor(Math.random() * englishEntries.length)
         const respText = englishEntries[arrIndex].flavor_text
-        description.innerText = respText.replace("\f", " ")
-        newCard.appendChild(description)
+        flavorText.innerText = respText.replace("\f", " ")
+        newCard.appendChild(flavorText)
     });
 
     // obtain more information
@@ -132,7 +128,7 @@ function renderCard(data) {
 };
 
 
-function getDescription(textUrl) {
+function getFlavorText(textUrl) {
     return fetch(`${textUrl}`).then(resp => resp.json())
 };
 
