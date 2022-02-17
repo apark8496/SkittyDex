@@ -79,7 +79,7 @@ aside:hover {
 /* login style */
 .input-group {
   margin: 2em;
-  width: 75em;
+  width: auto;
 }
 
 #pokemon-name,
