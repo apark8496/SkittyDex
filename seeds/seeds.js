@@ -11,18 +11,21 @@ const seedAll = async () => {
   await sequelize.sync({ force: true });
   console.log('\n----- DATABASE SYNCED -----\n');
   
-  await seedUser();
+  const users = await User.bulkCreate(userData, {
+    individualHooks: true,
+    returning: true,
+  });
   console.log('\n----- USERS SEEDED -----\n');
 
-  await seedPost();
+  const posts = await Post.bulkCreate(postData);
   console.log('\n----- POSTS SEEDED -----\n');
 
   //await seedComments();
-  await seedComment();
+  const comments = await Comment.bulkCreate(commentData);
   console.log('\n----- COMMENTS SEEDED -----\n');
 
-  await seedPokedex();
-  console.log('\n----- Pokedex SEEDED -----\n');
+  const pokemon = await Pokedex.bulkCreate(pokedexData);
+  console.log('\n----- POKEMON SEEDED -----\n');
 
   await seedPoke();
   console.log('\n----- Poke SEEDED -----\n');

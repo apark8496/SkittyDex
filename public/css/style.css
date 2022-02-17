@@ -28,13 +28,14 @@ header {
   cursor: pointer;
 }
 
-.navbar-brand a:hover {
+/* .navbar-brand a:hover {
   color: #a66e8a;
-}
+} */
 
 #logo {
   width: 9%;
   height: 9%;
+  margin-left: -0.5em;
 }
 
 .nav-item a {
@@ -75,14 +76,16 @@ aside:hover {
   color: #ffdde1;
 }
 
-#video {
-  opacity: 100%;
-}
-
 /* login style */
 .input-group {
   margin: 2em;
   width: 75em;
+}
+
+#pokemon-name,
+#pokedex-number {
+  border-radius: 5px;
+  margin-bottom: 1em;
 }
 
 input:focus {
@@ -97,13 +100,22 @@ input:focus {
 .signup-form,
 .login-form,
 .edit-post-form,
-.comment-form,
-.search-form {
+.comment-form {
   border-radius: 20px;
-  background-color: #ffdde1;
+  background-color: #a66e8a;
   margin-top: 3em;
   padding: 20px;
   opacity: 75%;
+}
+
+.search-form {
+  border-radius: 20px;
+  background-color: #a66e8a;
+  margin-top: 6em;
+  margin-left: 2em;
+  padding: 20px;
+  opacity: 75%;
+  font-weight: 600;
 }
 
 /* post/comment style */
@@ -121,8 +133,9 @@ input:focus {
 }
 
 .list-group-item {
-  background-color: #ffdde1;
+  /* background-color: #ffdde1; */
   margin: 1em;
+  border-style: none;
   border-radius: 20px;
 }
 
@@ -167,6 +180,7 @@ button {
   margin-left: 2em;
 }
 
+#button,
 .button {
   background-image: linear-gradient(
     to right,
@@ -182,13 +196,18 @@ button {
   border: none;
 }
 
+#button,
 .button:hover {
   background-position: right center;
   color: #e4aba2;
   text-decoration: none;
 }
 
-/* Pokemon card styles */
+/* Pokemon/dex card styles */
+#pokedex-logo {
+  width: 8em;
+}
+
 #sprite-container {
   background-image: url(https://i.imgur.com/6EhAM7G.png);
   background-size: cover;
@@ -198,17 +217,23 @@ button {
   cursor: pointer;
 }
 
-#card-container {
+#team-container {
+  width: 400px;
+}
+
+#card-container,
+#team-container {
   background-color: #bebebe81;
   border-radius: 15px;
-  margin-top: 5.4em;
-  margin-left: 1em;
+  margin-top: 1.5em;
+  margin-left: 2em;
 }
 
 #card-container img {
-  width: 100px;
+  width: 125px;
 }
 
+/* pokemon types */
 #pokemon-card #grass {
   background-color: #4e8234;
   color: #ffffff;
@@ -351,3 +376,5 @@ button {
   border-radius: 10px;
   width: 100px;
 }
+
+/* TODO:pokemon damage */

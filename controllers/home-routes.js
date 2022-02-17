@@ -2,8 +2,6 @@ const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { Post, User, Comment } = require('../models');
 
-// if possible lets change the post from going to homepage to the battlecenter and homepage show teams
-
 router.get('/', async (req, res) => {
   try{
     const postData = await Post.findAll({

@@ -1,6 +1,4 @@
-const { Pokedex } = require('../models');
-
-const pokedexData = [
+[
       {
         "id": 1,
         "name": "Turtwig",
@@ -1210,7 +1208,3 @@ const pokedexData = [
         "notEffective": ""
     }
 ]
-
-const seedPokedex = () => Pokedex.bulkCreate(pokedexData);
-  
-module.exports = seedPokedex;
