@@ -87,7 +87,6 @@ aside:hover {
 .input-group {
   margin: 2em;
   width: auto;
-  display: block;
 }
 
 #pokemon-name,
