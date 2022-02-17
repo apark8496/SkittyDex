@@ -7,7 +7,7 @@ const exphbs = require('express-handlebars');
 
 // port listener
 const app = express();
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 3001;
 
 // connection to db/session
 const sequelize = require('./config/connection');
