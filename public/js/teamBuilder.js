@@ -1,6 +1,7 @@
 // variables
-let i
-let j
+let i;
+let j;
+var chosen = [];
 
 // load in sprites on page 
 document.addEventListener("DOMContentLoaded", () => {
