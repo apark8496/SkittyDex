@@ -45,4 +45,5 @@ sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log(`Now listening on port ${PORT}!`));
 });
 
-// TODO: ADD IN COOKIES FOR SESSION 
+// TODO: ADD IN COOKIES FOR SESSION (ASHLEY) 
+// TODO: Deploy and fix Heroku error

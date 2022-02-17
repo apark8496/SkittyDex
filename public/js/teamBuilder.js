@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
         fetchPokemon(i)
     };
 
-    const spriteContainer = document.getElementById("sprite-container");
+    const spriteContainer = document.getElementById("pokedex-container");
     const backBtn = document.getElementById("back-btn");
     const nextBtn = document.getElementById("next-btn");
 
@@ -70,7 +70,7 @@ function fetchPokemon(id) {
                 pokemonImage.src = json.sprites.front_default
                 // allow user to click pokemon and append all sprites
                 pokemonImage.addEventListener("click", () => renderCard(json))
-                document.getElementById("sprite-container").appendChild(pokemonImage)
+                document.getElementById("pokedex-container").appendChild(pokemonImage)
             })
     }
 };
@@ -83,7 +83,7 @@ function renderCard(data) {
     newCard.id = "pokemon-card"
     newCard.className = "p-2"
     newCard.innerHTML = `
-        <h2>${data.name.toUpperCase()}</h2>
+        <h4>${data.name.toUpperCase()}</h4>
         <img src="${data.sprites.other["official-artwork"].front_default}" alt="${data.name.toUpperCase()}">
     `
     // types
@@ -94,9 +94,9 @@ function renderCard(data) {
         newCard.appendChild(types)
     };
 
-    // Get Damage Relations 
+    // TODO:Get Damage Relations (ASHLEY)
     
-    // Description
+    // Pokemon Description
     const description = document.createElement("p")
 
     getDescription(data.species.url).then((json) => {
