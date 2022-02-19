@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Post, User, Comment } = require('../models');
+const { Post, User, Comment, Team, Pokemon } = require('../models');
 
 router.get('/', async (req, res) => {
   try{
@@ -84,6 +84,72 @@ router.get('/post/:id', async (req, res) => {
   }
 });
 
+// GET homepage with 10 newest teams
+router.get('/', async (req, res) => {
+  try {
+    const topTenTeamData = await Team.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ['username']
+        },
+        {
+          model: Pokemon,
+          attributes: ['name', 'sprite']
+        }
+      ]
+    });
+
+    const topTenTeams = topTenTeamData.map((team) => team.get({ plain: true }));
+
+    res.render('homepage', {
+      topTenTeams,
+      logged_in: req.session.logged_in
+    })
+
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+// GET page for specific top 10 team
+router.get('/top-team/:id', async (req, res) => {
+  try {
+    const teamData = await Team.findByPk(req.params.id, { include: [{ model: User, attributes: { exclude: 'password' } }, { model: Pokemon }] });
+    const team = teamData.get({ plain: true });
+
+    if (!team) {
+      res.status(404).json({ message: 'No team found with this id!' });
+      return;
+    };
+
+    res.render('userteam', {
+      ...team,
+      logged_in: req.session.logged_in
+    });
+
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+
+// GET specific team from dashboard
+router.get('/dashboard/team/:id', async (req, res) => {
+  try {
+    const teamData = await Team.findByPk(req.params.id, { include: [{ model: User, attributes: { exclude: 'password' } }, { model: Pokemon }] });
+    const team = teamData.get({ plain: true });
+  
+    res.render('userteam', {
+      ...team,
+      logged_in: true
+    })
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+// Login Page
 router.get('/login', (req, res) => {
     if (req.session.logged_in) {
       res.redirect('/');

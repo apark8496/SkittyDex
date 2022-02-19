@@ -1,6 +1,7 @@
 // variables
-let i
-let j
+let i;
+let j;
+const Pokemon = require('pokemon.js');
 
 // load in sprites on page 
 document.addEventListener("DOMContentLoaded", () => {
@@ -210,7 +211,45 @@ function getCard(name, number) {
     }
 };
 
-// TODO:save team function (BRUCE)
+saveTeamHandler.addEventListener('click', async (event) => {
+    event.preventDefault();
+    // save current pokemon to database
+    const teamInfo = {
+        team_name: newTeamName.value,
+    };
 
+     // Post the team to the database
+     const postTeam = await fetch('/api/teams/', {
+        method: 'POST',
+        body: JSON.stringify(teamInfo),
+        headers: { 'Content-Type': 'application/json' },
+    });
+    const parsedTeam = await postTeam.json();
 
-// TODO:post team to homepage (BRUCE)
+    newTeam.forEach(pokemon => {
+        let pokemonInfo;
+        if (pokemon.type[1]) {
+            pokemonInfo = {
+                name: pokemon.name,               
+                team_id: parsedTeam.id,
+                spriteImg: pokemon.sprite
+            }
+        } else {
+            pokemonInfo = {
+                pokemon_name: pokemon.name,                
+                spriteImg: pokemon.sprite
+            }
+        }
+        const postPokemon = fetch('/api/pokemon/', {
+            method: 'POST',
+            body: JSON.stringify(pokemonInfo),
+            headers: { 'Content-Type': 'application/json' },
+        });
+    });
+
+    if (postTeam.ok) {
+        document.location.replace(`/pokedex`);
+    } else {
+        alert(postTeam.statusText);
+    }
+})
