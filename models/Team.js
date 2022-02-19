@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Team extends Model { }
+class Team extends Model {}
 
 Team.init(
     {
@@ -11,13 +11,9 @@ Team.init(
             primaryKey: true,
             autoIncrement: true
         },
-        team_name: {
+        teamName: {
             type: DataTypes.STRING,
             allowNull: false,
-        },
-        game: {
-            type: DataTypes.STRING,
-            allowNull: false
         },
         userID: {
             type: DataTypes.INTEGER,

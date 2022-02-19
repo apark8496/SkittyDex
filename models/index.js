@@ -3,7 +3,6 @@ const Post = require('./Post');
 const Comment = require('./Comment');
 const Pokedex = require('./Pokedex');
 const Team = require('./Team');
-const Pokemon = require('./Pokemon');
 
 // create associations
 User.hasMany(Post, {
@@ -47,13 +46,4 @@ Post.hasMany(Comment, {
     hooks: true
 });
 
-Team.hasMany(Pokemon, {
-    foreignKey: 'team_id',
-    onDelete: 'CASCADE'
-});
-
-Pokemon.belongsTo(Team, {
-    foreignKey: 'team_id'
-});
-
-module.exports = { User, Post, Comment, Pokedex, Team, Pokemon };
+module.exports = { User, Post, Comment, Pokedex, Team };

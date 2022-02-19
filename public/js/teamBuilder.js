@@ -215,41 +215,30 @@ saveTeamHandler.addEventListener('click', async (event) => {
     event.preventDefault();
     // save current pokemon to database
     const teamInfo = {
-        team_name: newTeamName.value,
+        teamName: newTeamName.value,
+
     };
 
-     // Post the team to the database
-     const postTeam = await fetch('/api/teams/', {
+    const response = await fetch('/api/teams/', {
         method: 'POST',
         body: JSON.stringify(teamInfo),
         headers: { 'Content-Type': 'application/json' },
     });
-    const parsedTeam = await postTeam.json();
+     // Post the team to the database
+     const response = await fetch('api/teams', {
+     method: 'POST', 
+     body: JSON.stringify({
+         memberSprite,
+         team_id,
+     }),
+     headers: {
+         'Content-Type': 'application/json'
+     }
+ });
 
-    newTeam.forEach(pokemon => {
-        let pokemonInfo;
-        if (pokemon.type[1]) {
-            pokemonInfo = {
-                name: pokemon.name,               
-                team_id: parsedTeam.id,
-                spriteImg: pokemon.sprite
-            }
-        } else {
-            pokemonInfo = {
-                pokemon_name: pokemon.name,                
-                spriteImg: pokemon.sprite
-            }
-        }
-        const postPokemon = fetch('/api/pokemon/', {
-            method: 'POST',
-            body: JSON.stringify(pokemonInfo),
-            headers: { 'Content-Type': 'application/json' },
-        });
-    });
-
-    if (postTeam.ok) {
-        document.location.replace(`/pokedex`);
-    } else {
-        alert(postTeam.statusText);
-    }
-})
+ if (response.ok) {
+     document.location.replace('/pokedex');
+ } else {
+     alert(response.statusText);
+ }
+});

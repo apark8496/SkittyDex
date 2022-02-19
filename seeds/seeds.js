@@ -3,9 +3,8 @@ const postData = require('./postData');
 const commentData = require('./commentData');
 const pokedexData = require('./pokedexData');
 const teamData = require('./teamData');
-const pokemonData = require('./pokemonData');
 
-const { Post, User, Comment, Pokedex, Team, Pokemon } = require('../models');
+const { Post, User, Comment, Pokedex, Team } = require('../models');
 
 const sequelize = require('../config/connection');
 
@@ -28,6 +27,9 @@ const seedAll = async () => {
 
   const pokemon = await Pokedex.bulkCreate(pokedexData);
   console.log('\n----- POKEMON SEEDED -----\n');
+
+  const teams = await Team.bulkCreate(teamData);
+  console.log('\n----- TEAMS SEEDED -----\n');
 
   process.exit(0);
 };
