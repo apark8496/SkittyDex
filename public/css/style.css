@@ -14,7 +14,11 @@ body {
 
 /* navbar/header style */
 header {
-  background-color: #ffdde1;
+  background-color: #ffdde1; 
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  z-index: 9999;
 }
 
 .navbar-brand {
@@ -70,6 +74,7 @@ aside {
   color: #000000;
   margin-top: 2em;
   margin-bottom: 4em;
+  cursor: none;
 }
 
 aside:hover {
