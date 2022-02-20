@@ -11,9 +11,13 @@ Team.init(
             primaryKey: true,
             autoIncrement: true
         },
-        teamName: {
+        teamTitle: {
             type: DataTypes.STRING,
             allowNull: false,
+        },
+        team: {
+            type:DataTypes.STRING,
+            allowNull: false
         },
         userID: {
             type: DataTypes.INTEGER,

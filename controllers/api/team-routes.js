@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Team, Pokemon } = require('../../models');
+const { User, Team } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // GET for all teams in db
@@ -60,7 +60,7 @@ router.get('/my_teams/', withAuth, async (req, res) => {
 router.post('/', withAuth, async (req, res) => {
   try {
     const newTeam = await Team.create({
-      teamName: req.body.teamName,
+      teamTitle: req.body.teamTitle,
       game: req.body.game,
       userID: req.session.user_id
     });
@@ -76,7 +76,7 @@ router.post('/', withAuth, async (req, res) => {
 router.put('/:id', withAuth, async (req, res) => {
   try {
     const updatedTeam = await Team.update({
-      teamName: req.body.teamName
+      teamTitle: req.body.teamTitle
     },
       {
         where: {

@@ -37,21 +37,20 @@
 <div class="container text-center">
   <div class="team" id="team-container">
     <h3><img src="https://i.imgur.com/VeIWVdq.png" border="0" alt="Team"></h3>
-    <input id="new-team-name" placeholder="New Pokemon Team" type="text"></input>
+    <input id="teamTitle" placeholder="New Pokemon Team" type="text"></input>
     <div id="member-1"></div>
     <div id="member-2"></div>
     <div id="member-3"></div>
     <div id="member-4"></div>
     <div id="member-5"></div>
     <div id="member-6"></div>
-    <button id="save-new-team" class="btn btn-outline-success mb-2">Save Team</button>
+    <button class="btn btn-primary" id="save-new-team" type="submit" value="Save Team!"></button>
   </div>
 </div>
 
 <h3>Your teams:</h3>
 {{#each userTeams as |team|}}
-<h4>{{team.teamName}}</h4>
-{{#each team.pokemons as |pokemon|}}
+<h4>{{team.teamTitle}}</h4>
 <div class="card col-sm-12 m-2" style="width: 18rem;">
   <img class="card-img-top col" src="{{pokemon.sprite}}" alt="{{pokemon.name}}">
   <div class="card-body d-flex flex-column">

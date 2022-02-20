@@ -2,6 +2,8 @@
 let i;
 let j;
 const Pokemon = require('pokemon.js');
+const saveTeamBtn = document.getElementById('save-new-team');
+
 
 // load in sprites on page 
 document.addEventListener("DOMContentLoaded", () => {
@@ -211,34 +213,29 @@ function getCard(name, number) {
     }
 };
 
-saveTeamHandler.addEventListener('click', async (event) => {
-    event.preventDefault();
-    // save current pokemon to database
-    const teamInfo = {
-        teamName: newTeamName.value,
+// async function saveTeamHandler(event) {
+//     console.log("submit");
+//     event.preventDefault();
+//     // save current team to database
+//     const teamTitle = document.querySelector('#teamTitle')
+//     const team = document.querySelector('#member-1', '#member-2', '#member-3', '#member-4', '#member-5', '#member-6');
 
-    };
+//     const response = await fetch('/api/teams', {
+//         method: 'POST',
+//         body: JSON.stringify({
+//             teamTitle,
+//             team
+//         }),
+//         headers: {
+//             'Content-Type': 'application/json'
+//         }
+//     });
 
-    const response = await fetch('/api/teams/', {
-        method: 'POST',
-        body: JSON.stringify(teamInfo),
-        headers: { 'Content-Type': 'application/json' },
-    });
-     // Post the team to the database
-     const response = await fetch('api/teams', {
-     method: 'POST', 
-     body: JSON.stringify({
-         memberSprite,
-         team_id,
-     }),
-     headers: {
-         'Content-Type': 'application/json'
-     }
- });
+//     if (response.ok) {
+//         document.location.replace('/pokedex');
+//     } else {
+//         alert(response.statusText);
+//     }
+// };
 
- if (response.ok) {
-     document.location.replace('/pokedex');
- } else {
-     alert(response.statusText);
- }
-});
+// document.querySelector('#save-new-team').addEventListener('submit', saveTeamHandler);

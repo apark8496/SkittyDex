@@ -28,7 +28,7 @@ Comment.belongsTo(User, {
     hooks: true
 });
 
-Comment.belongsTo(Post, Team, {
+Comment.belongsTo(Post, {
     foreignKey: 'postID',
     onDelete: 'cascade',
     hooks: true

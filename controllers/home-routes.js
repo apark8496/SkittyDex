@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Post, User, Comment, Team, Pokemon } = require('../models');
+const { Post, User, Comment, Team } = require('../models');
 
 router.get('/', async (req, res) => {
   try{
@@ -84,7 +84,6 @@ router.get('/post/:id', async (req, res) => {
   }
 });
 
-// GET homepage with 10 newest teams
 router.get('/', async (req, res) => {
   try {
     const topTenTeamData = await Team.findAll({
@@ -94,39 +93,15 @@ router.get('/', async (req, res) => {
           attributes: ['username']
         },
         {
-          model: Pokemon,
-          attributes: ['name', 'sprite']
+          model: Team,
+          attributes: ['id', 'teamTitle', 'team', 'userID']
         }
       ]
     });
 
-    const topTenTeams = topTenTeamData.map((team) => team.get({ plain: true }));
-
     res.render('homepage', {
-      topTenTeams,
       logged_in: req.session.logged_in
     })
-
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
-// GET page for specific top 10 team
-router.get('/top-team/:id', async (req, res) => {
-  try {
-    const teamData = await Team.findByPk(req.params.id, { include: [{ model: User, attributes: { exclude: 'password' } }, { model: Pokemon }] });
-    const team = teamData.get({ plain: true });
-
-    if (!team) {
-      res.status(404).json({ message: 'No team found with this id!' });
-      return;
-    };
-
-    res.render('userteam', {
-      ...team,
-      logged_in: req.session.logged_in
-    });
 
   } catch (err) {
     res.status(500).json(err);
@@ -137,7 +112,7 @@ router.get('/top-team/:id', async (req, res) => {
 // GET specific team from dashboard
 router.get('/dashboard/team/:id', async (req, res) => {
   try {
-    const teamData = await Team.findByPk(req.params.id, { include: [{ model: User, attributes: { exclude: 'password' } }, { model: Pokemon }] });
+    const teamData = await Team.findByPk(req.params.id, { include: [{ model: User, attributes: { exclude: 'password' } }, { model: Team }] });
     const team = teamData.get({ plain: true });
   
     res.render('userteam', {
