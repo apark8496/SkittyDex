@@ -26,9 +26,10 @@ finding other trainers to battle and trade in game with.
 ![Homepage](https://github.com/adunderwood96/SkittyDex/blob/73b0f670fe2466dcd8543946c47bb9dee4db9215/assets/homepage.png)
 ![Dashboard](https://github.com/adunderwood96/SkittyDex/blob/73b0f670fe2466dcd8543946c47bb9dee4db9215/assets/dash.png)
 ![Team-Builder](https://github.com/adunderwood96/SkittyDex/blob/73b0f670fe2466dcd8543946c47bb9dee4db9215/assets/team.png)
-![QR-Code](https://github.com/adunderwood96/SkittyDex/blob/73b0f670fe2466dcd8543946c47bb9dee4db9215/assets/qrcode.png)
 
 ## Site
+Check it out on your mobile device!
+![QR-Code](https://github.com/adunderwood96/SkittyDex/blob/73b0f670fe2466dcd8543946c47bb9dee4db9215/assets/qrcode.png)
 
 https://skittydex.herokuapp.com
 
