@@ -1,7 +1,6 @@
 const User = require('./User');
 const Post = require('./Post');
 const Comment = require('./Comment');
-const Pokedex = require('./Pokedex');
 const Team = require('./Team');
 
 // create associations
@@ -46,4 +45,4 @@ Post.hasMany(Comment, {
     hooks: true
 });
 
-module.exports = { User, Post, Comment, Pokedex, Team };
+module.exports = { User, Post, Comment, Team };

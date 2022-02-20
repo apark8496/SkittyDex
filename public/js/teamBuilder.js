@@ -213,29 +213,29 @@ function getCard(name, number) {
     }
 };
 
-// async function saveTeamHandler(event) {
-//     console.log("submit");
-//     event.preventDefault();
-//     // save current team to database
-//     const teamTitle = document.querySelector('#teamTitle')
-//     const team = document.querySelector('#member-1', '#member-2', '#member-3', '#member-4', '#member-5', '#member-6');
+async function saveTeamHandler(event) {
+    console.log("submit");
+    event.preventDefault();
+    // save current team to database
+    const teamTitle = document.querySelector('#teamTitle')
+    const team = document.querySelector('#member-1', '#member-2', '#member-3', '#member-4', '#member-5', '#member-6');
 
-//     const response = await fetch('/api/teams', {
-//         method: 'POST',
-//         body: JSON.stringify({
-//             teamTitle,
-//             team
-//         }),
-//         headers: {
-//             'Content-Type': 'application/json'
-//         }
-//     });
+    const response = await fetch('/api/teams', {
+        method: 'POST',
+        body: JSON.stringify({
+            teamTitle,
+            team
+        }),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    });
 
-//     if (response.ok) {
-//         document.location.replace('/pokedex');
-//     } else {
-//         alert(response.statusText);
-//     }
-// };
+    if (response.ok) {
+        document.location.replace('/pokedex');
+    } else {
+        alert(response.statusText);
+    }
+};
 
-// document.querySelector('#save-new-team').addEventListener('submit', saveTeamHandler);
+document.querySelector('#save-new-team').addEventListener('submit', saveTeamHandler);

@@ -1,21 +1,21 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Pokedex } = require('../models');
+const { Team } = require('../models');
 const withAuth = require('../utils/auth');
 
 // get all pokemon from Pokedex
 router.get('/', withAuth, async (req, res) => {
     try {
-        const dbPokedexData = await Pokedex.findAll({            
+        const dbTeamData = await Team.findAll({            
         });
 
-        const pokemon = dbPokedexData.map((pokedex) =>
-            pokedex.get({ plain: true })            
+        const team = dbTeamData.map((team) =>
+            team.get({ plain: true })            
         );
-        console.log(pokemon);
+        console.log(team);
         // Send over the 'loggedIn' session variable to the 'homepage' template
         res.render('pokedex', {
-            pokemon,
+            team,
             logged_in: true,        });
     } catch (err) {
         console.log(err);
@@ -25,10 +25,10 @@ router.get('/', withAuth, async (req, res) => {
 
 router.get('/:id',withAuth, async (req, res) => {
     try {
-        const dbPokedexData = await Pokedex.findByPk(req.params.id, {
+        const dbTeamData = await Team.findByPk(req.params.id, {
         });
 
-        const pokedex = dbPokedexData.get({ plain: true });
+        const pokedex = dbTeamData.get({ plain: true });
         // Send over the 'loggedIn' session variable to the 'Pokedex' template
         res.render('pokedex', { pokedex, logged_in: true, });
     } catch (err) {
@@ -50,4 +50,3 @@ router.get('/login', (req, res) => {
   
   module.exports = router;
   
-// TODO: Fix route to only be visable when signed in
