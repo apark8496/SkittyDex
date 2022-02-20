@@ -23,9 +23,10 @@ finding other trainers to battle and trade in game with.
 
 ## Demo
 
-![Homepage](https://github.com/adunderwood96/tech-blog/blob/c89c17caa4181ad861ffe8084249b7b0573ccc0c/assets/images/homepage.png)
-![Dashboard]()
-![Team-Builder]()
+![Homepage](https://github.com/adunderwood96/SkittyDex/blob/73b0f670fe2466dcd8543946c47bb9dee4db9215/assets/homepage.png)
+![Dashboard](https://github.com/adunderwood96/SkittyDex/blob/73b0f670fe2466dcd8543946c47bb9dee4db9215/assets/dash.png)
+![Team-Builder](https://github.com/adunderwood96/SkittyDex/blob/73b0f670fe2466dcd8543946c47bb9dee4db9215/assets/team.png)
+![QR-Code](https://github.com/adunderwood96/SkittyDex/blob/73b0f670fe2466dcd8543946c47bb9dee4db9215/assets/qrcode.png)
 
 ## Site
 
