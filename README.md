@@ -39,7 +39,7 @@ npm i/ npm install
 
 ## Technologies
 
-The new technology that our team implemented was pokeapi as well as . This was one of biggest issues since it was assigned to our third member who dropped last minute so was Lodash as originally planned did not ger used. 
+The new technology that our team implemented was pokeapi as well as tried using howler to play theme music while builder the trainer's team. This was one of biggest issues since it was assigned to our third member who dropped last minute from the project and was Lodash as originally planned did not get used. 
 
 ## Usage
 
@@ -60,9 +60,9 @@ If there are any further questions please feel free to contact me:
 
 Github:
 
-https://github/adunderwood96 : Front-End (Handlebars/CSS/JS), routes, and some js for team-builder/new tech
+https://github/adunderwood96 : Front-End (Handlebars/CSS/JS), routes/models for user/post/comment/pokedex, and js for team-builder/new tech
 
-https://github/brucewill03 -->Javascript for team-builder, started routes for team builder (save/post)
+https://github/brucewill03 -->Javascript for team-builder, started routes/models for team builder (save/post)
 
 
 ## Future Developments:

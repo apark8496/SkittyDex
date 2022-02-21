@@ -4,7 +4,6 @@ const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
 
-
 // port listener
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -47,4 +46,3 @@ sequelize.sync({ force: false }).then(() => {
 });
 
 // TODO: ADD IN COOKIES FOR SESSION (ASHLEY) 
-// TODO: Deploy and fix Heroku error
