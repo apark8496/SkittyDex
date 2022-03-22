@@ -60,7 +60,7 @@ If there are any further questions please feel free to contact me:
 
 Github:
 
-https://github/adunderwood96 : Front-End (Handlebars/CSS/JS), routes/models for user/post/comment/pokedex, and js for team-builder/new tech
+https://github/apark8496 : Front-End (Handlebars/CSS/JS), routes/models for user/post/comment/pokedex, and js for team-builder/new tech
 
 https://github/brucewill03 -->Javascript for team-builder, started routes/models for team builder (save/post)
 
