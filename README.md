@@ -18,8 +18,6 @@ whether it be for battling, contest, aesthetics, or even just pokemon they love.
 The goal is for trainers to communicate with others in the community through
 finding other trainers to battle and trade in game with.
 
-- save/post teams to home page --> STARTED BUT DID NOT FINISH DUE TO LOSING TEAM MATE MID PROJECT/ OTHER THINGS TOOK PRIORITY!!!
-
 
 ## Demo
 
@@ -71,4 +69,4 @@ https://github/brucewill03 -->Javascript for team-builder, started routes/models
 - More user options, such as add friends
 - Pokemon news page
 - Pokemon TCG (game shop) location finder for in person interaction. Find local community.
-- save/post teams to home page --> STARTED BUT DID NOT FINISH DUE TO LOSING TEAM MATE MID PROJECT/ OTHER THINGS TOOK PRIORITY!!!
+- save/post teams to home page 
