@@ -37,7 +37,18 @@ npm i/ npm install
 
 ## Technologies
 
-The new technology that our team implemented was pokeapi as well as tried using howler to play theme music while builder the trainer's team. This was one of biggest issues since it was assigned to our third member who dropped last minute from the project and was Lodash as originally planned did not get used. 
+Pokeappi
+
+Handlebars
+
+express
+
+node
+
+dotenv
+
+mysql
+
 
 ## Usage
 
