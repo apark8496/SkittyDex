@@ -31,5 +31,7 @@
   "bugs": {
     "url": "https://github.com/adunderwood96/SkittyDex/issues"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "netlify-cli": "^12.9.2"
+  }
 }
